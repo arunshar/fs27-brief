@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2026-27 Faculty Search: Ranked Brief</title>
+<style>
+:root{
+  --bg:#f7f9fb; --panel:#ffffff; --ink:#1c2733; --soft:#5b6b7b; --line:#e1e8ef;
+  --navy:#1a5d1a; --accent:#2e8b2e; --red:#b02a2a; --green:#1e7d4f; --amber:#9a6b00;
+  --chip:#eef5ee; --shadow:0 1px 3px rgba(20,40,60,.08),0 6px 18px rgba(20,40,60,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f161d;--panel:#161f29;--ink:#e7eef5;--soft:#9fb0c0;--line:#26333f;
+    --navy:#76c043;--accent:#8fd35a;--chip:#1a2a1d;--shadow:0 1px 3px rgba(0,0,0,.4);}
+}
+[data-theme="light"]{--bg:#f7f9fb;--panel:#fff;--ink:#1c2733;--soft:#5b6b7b;--line:#e1e8ef;--navy:#1a5d1a;--accent:#2e8b2e;--chip:#eef5ee;}
+[data-theme="dark"]{--bg:#0f161d;--panel:#161f29;--ink:#e7eef5;--soft:#9fb0c0;--line:#26333f;--navy:#76c043;--accent:#8fd35a;--chip:#1a2a1d;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+.app{display:flex;min-height:100vh}
+.side{width:300px;flex:0 0 300px;background:var(--panel);border-right:1px solid var(--line);padding:18px 12px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-weight:800;color:var(--navy);font-size:16px;padding:6px 10px 2px}
+.brand small{display:block;color:var(--soft);font-weight:600;font-size:12px;margin-top:3px;line-height:1.4}
+.nav a{display:block;padding:9px 11px;margin:2px 4px;border-radius:9px;color:var(--ink);text-decoration:none;font-size:14px;cursor:pointer}
+.nav a:hover{background:var(--chip)}
+.nav a.active{background:var(--navy);color:#fff;font-weight:700}
+.nav .grp{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin:14px 12px 4px;font-weight:700}
+.toolbar{display:flex;gap:8px;align-items:center;padding:6px 8px 12px}
+.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:6px 10px;font-size:13px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.main{flex:1;min-width:0;padding:34px 40px 90px;max-width:1000px}
+.page{display:none;animation:fade .18s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+h1{font-size:27px;color:var(--navy);margin:0 0 4px}
+h2{font-size:20px;color:var(--navy);margin:26px 0 8px;border-bottom:2px solid var(--line);padding-bottom:5px}
+h3{font-size:16px;margin:18px 0 4px;color:var(--accent)}
+.lead{color:var(--soft);font-size:15px;margin:2px 0 14px}
+p{margin:8px 0}
+ul,ol{margin:8px 0 8px 4px;padding-left:22px}
+li{margin:5px 0}
+code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:13px}
+pre{background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow:auto;font-size:13px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;box-shadow:var(--shadow)}
+.kpi{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.kpi div{flex:1;min-width:130px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:23px;color:var(--navy)}
+.kpi span{font-size:12.5px;color:var(--soft)}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--chip);color:var(--navy)}
+.tag{display:inline-block;background:var(--chip);color:var(--accent);border-radius:20px;padding:2px 10px;font-size:12px;font-weight:700;margin-right:6px}
+.good{color:var(--green);font-weight:700}.bad{color:var(--red);font-weight:700}.warn{color:var(--amber);font-weight:700}
+.callout{border-left:4px solid var(--accent);background:var(--chip);padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0}
+.callout.red{border-color:var(--red)}.callout.green{border-color:var(--green)}.callout.amber{border-color:var(--amber)}
+.plain{border-left:4px solid var(--accent);background:var(--chip);padding:8px 12px;border-radius:0 8px 8px 0;margin:8px 0;font-size:14px}
+.plain b{color:var(--navy)}
+.term{border-bottom:1px dashed var(--accent);cursor:help;color:var(--ink)}
+a.link{color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid transparent}
+a.link:hover{border-bottom:1px solid var(--accent)}
+.pop{position:fixed;z-index:50;max-width:344px;background:var(--panel);border:1px solid var(--accent);box-shadow:var(--shadow);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--ink);display:none}
+.pop b{color:var(--navy)}
+.footnav{display:flex;justify-content:space-between;margin-top:30px;border-top:1px solid var(--line);padding-top:14px;gap:10px}
+.q{font-weight:700;color:var(--navy);margin-top:14px}
+.a{margin:4px 0 10px}
+.hint{font-size:12.5px;color:var(--soft)}
+.check li{list-style:none;margin-left:-18px}
+.check li::before{content:"\2610  ";color:var(--accent);font-weight:700}
+.ladder div.rung{display:flex;align-items:center;gap:10px;margin:7px 0}
+.ladder .bar{height:14px;border-radius:7px;background:var(--accent);opacity:.85}
+.ladder .lab{font-size:13px;min-width:0}
+.ladder .dur{font-size:12px;color:var(--soft);white-space:nowrap}
+@media (max-width:860px){
+  .side{position:fixed;left:-320px;transition:left .2s;z-index:40}
+  .side.open{left:0}
+  .main{padding:20px 18px 80px}
+  .menu-btn{display:inline-flex!important}
+  /* Phone screens (27 Oct 2026): a wide table scrolls inside its own box instead of widening the page. */
+  .page table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .page img,.page svg{max-width:100%;height:auto}
+}
+/* Long paths and URLs wrap inside a paragraph, a list item or a heading. */
+.page p,.page li,.page h1,.page h2,.page h3,.page a{overflow-wrap:break-word}
+.menu-btn{display:none;position:fixed;top:12px;left:12px;z-index:45}
+</style>
+</head>
+<body>
+<button class="btn menu-btn" id="menuBtn">&#9776; Menu</button>
+<div class="app">
+  <aside class="side" id="side">
+    <div class="brand">2026-27 Faculty Search<small>ranked brief &middot; read on 26 November 2026</small></div>
+    <div class="toolbar">
+      <button class="btn" id="themeBtn">&#9680; Theme</button>
+      <button class="btn" id="printBtn">&#9113; Print</button>
+    </div>
+    <nav class="nav" id="nav">
+      <div class="grp">Ranked brief</div>
+      <a data-p="bottom">1 &middot; Bottom line</a>
+      <a data-p="week">2 &middot; Apply this week</a>
+      <a data-p="cycle">3 &middot; Apply this cycle</a>
+      <a data-p="network">4 &middot; Committees and ties</a>
+      <a data-p="longshots">5 &middot; Long shots</a>
+      <a data-p="tracks">6 &middot; Tracks, non-US, fellows</a>
+      <a data-p="calendar">7 &middot; Dates</a>
+      <a data-p="out">8 &middot; Closed, gated, dropped</a>
+      <a data-p="method">9 &middot; Method and open items</a>
+    </nav>
+    <div class="hint" style="padding:12px 12px 0">Use &uarr;/&darr; or J/K to move between pages. Click a dashed term for its definition.</div>
+  </aside>
+
+  <main class="main" id="main">
+
+<section class="page" id="bottom">
+<h1>Bottom line</h1>
+<p class="lead">This brief ranks the 151 entries in the public sheet "2026-27 Academic Hiring: AI, Computing &amp; Society" for your record, and it adds 12 better-fitting searches that the sheet does not list. Every posting was read on 26 November 2026.</p>
+<div class="kpi">
+  <div><b>151</b><span>entries on the sheet, all triaged by two readers</span></div>
+  <div><b>48</b><span>searches on the sheet verified in full</span></div>
+  <div><b>12</b><span>extra searches found and verified</span></div>
+  <div><b>14</b><span>searches worth an application now</span></div>
+</div>
+<div class="callout green"><b>The two best targets:</b> UMBC's Trustworthy AI search has the best mix of fit, odds and network on the sheet, because two faculty in the hiring department hold an NSF institute grant with Prof. Shekhar. UNC Chapel Hill's GeoAI search in Geography is the only search that names your field, and its hard deadline is 1 December. The UNC search is not on the sheet.</div>
+<div class="callout amber"><b>The honest read on odds:</b> No search earned a "favorable" <span class="term" data-def="Odds bands: favorable, plausible, long shot, or insufficient evidence. Each band rests on the unit&#x27;s recent assistant hires, the number of positions, and whether the ad names your area. No percentages are used.">odds band</span>. Your first-author record is in ACM TIST and SIGSPATIAL, and you have no first-author paper at NeurIPS, ICML, ICLR or KDD. The top-25 computer science departments on the sheet hired assistant professors with main-track records in the last three cycles, so each of them is a long shot. Your record is in range at units that hire from applied and domain venues, and at lines outside computer science that name spatial or physics-informed AI.</div>
+<h2>Your three questions</h2>
+<div class="card">
+<p><b>Which searches are most relevant and give the best chance?</b> The searches on pages 2 and 3 are the answer. In order of my recommendation: UMBC Trustworthy AI, UNC Chapel Hill GeoAI, Michigan-Flint, Purdue Indianapolis, North Florida, UNC Charlotte, Vanderbilt, and Virginia Tech civil engineering. Ohio State, UC Irvine and BU are dated this week and fit your topics, but their odds are long.</p>
+<p><b>Which have a chair or committee member close to Prof. Shekhar, Prof. Kumar, or you?</b> Only one search has such a person in a named committee role. Your co-author Aneesh Subramanian chairs a physics-informed AI search in atmospheric science at CU Boulder, which is not on the sheet. No publicly named chair or committee member at any other search is a student, postdoc or real collaborator of either professor. Five hiring departments do contain such a person as regular faculty. Page 4 lists them with sources.</p>
+<p><b>What track are these positions?</b> Almost every relevant row is a tenure-track assistant professor line or an open-rank line that includes the assistant level. Page 6 lists the exceptions: one research-faculty cohort, the NYU faculty fellowships, two teaching-track rows, and the non-US searches.</p>
+</div>
+<h2>How to read the scores</h2>
+<ul>
+<li><b><span class="term" data-def="Area fit, 0 to 4: 2 is a broad search that plausibly includes your work, 3 means the ad names an area your papers sit in, and 4 means the ad names your area and your first-author papers back it.">area fit</span>:</b> a score from 0 to 4 against your publications.</li>
+<li><b><span class="term" data-def="Odds bands: favorable, plausible, long shot, or insufficient evidence. Each band rests on the unit&#x27;s recent assistant hires, the number of positions, and whether the ad names your area. No percentages are used.">odds band</span>:</b> an ordinal band based on observable facts about the unit.</li>
+<li><b><span class="term" data-def="Long list: the 15 to 25 files that a committee reads in full and requests letters for.">long list</span>:</b> a skeptical search chair's read of whether your file gets a full read at that unit.</li>
+<li><b>Ties:</b> <span class="term" data-def="T1: a PhD advisee of Prof. Shekhar or Prof. Kumar, or your own co-author or committee member.">T1</span>, <span class="term" data-def="T2: a former postdoc of either professor, a former Minnesota CS faculty colleague, or a Minnesota CS PhD alumnus.">T2</span> and <span class="term" data-def="T3: a repeated co-author (three or more joint papers, or one in the last five years) or a grant co-PI.">T3</span> count only when the person is in the hiring unit.</li>
+</ul>
+<div class="callout"><b>Two facts that apply to almost every row:</b> Nearly all ads are silent on visa sponsorship, so the brief cannot confirm sponsorship anywhere. Almost every ad needs the degree only by the start date in 2027.</div>
+</section>
+
+<section class="page" id="week">
+<h1>Apply this week</h1>
+<p class="lead">These five searches have dates between 30 November and 1 December. The first one is the strongest fit in the whole review.</p>
+<table><tr><th>#</th><th>Search</th><th>Track</th><th>Date</th><th>References</th><th>Fit</th><th>Odds</th><th>Long list</th></tr>
+<tr><td>1</td><td><b>UNC Chapel Hill, Geography and Environment</b><br><a href="https://unc.peopleadmin.com/postings/327109" target="_blank" rel="noopener">Assistant Professor in GeoAI and Geospatial Data Science</a></td><td>Tenure-track, assistant</td><td>Hard deadline 1 Dec 2026</td><td>Names of four references</td><td>4</td><td>Plausible</td><td>Likely</td></tr>
+<tr><td>2</td><td><b>Ohio State, Computer Science and Engineering</b><br><a href="https://apply.interfolio.com/194540" target="_blank" rel="noopener">AI World Models for Embodied Systems (Interfolio 194540)</a></td><td>Tenure-track, assistant, 70% CSE and 30% civil, architecture or mechanical</td><td>Posting closes 30 Nov 2026</td><td>Names of three references</td><td>3</td><td>Long shot</td><td>Possible</td></tr>
+<tr><td>3</td><td><b>UC Irvine, Electrical Engineering and Computer Science</b><br><a href="https://recruit.ap.uci.edu/JPF10407" target="_blank" rel="noopener">Assistant Professor in AI/ML (JPF10407)</a></td><td>Tenure-track, assistant</td><td>Review 1 Dec 2026, final 15 Feb 2027</td><td>Names of three to five references</td><td>3</td><td>Long shot</td><td>Unlikely</td></tr>
+<tr><td>4</td><td><b>Boston University, Computing and Data Sciences</b><br><a href="https://academicjobsonline.org/ajo/jobs/32632" target="_blank" rel="noopener">Assistant Professor, Data Science and AI for Science and Engineering (AJO 32632)</a></td><td>Tenure-track, assistant</td><td>Priority 1 Dec 2026, rolling to 30 Apr 2027</td><td>Three letters uploaded by the writers</td><td>3</td><td>Long shot</td><td>Unlikely</td></tr>
+<tr><td>5</td><td><b>CU Boulder, Atmospheric and Oceanic Sciences</b><br><a href="https://jobs.colorado.edu/jobs/JobDetail/75421" target="_blank" rel="noopener">Assistant Professor, Boundary-Layer and Coupled Earth System Processes with Physics-Informed AI (req 75421)</a></td><td>Tenure-track, assistant</td><td>Full consideration 1 Dec 2026, portal closes 1 Jun 2027</td><td>Names only</td><td>3</td><td>Long shot</td><td>Unlikely</td></tr>
+</table>
+
+<div class="card"><h3>1. UNC Chapel Hill, Geography and Environment: GeoAI and Geospatial Data Science</h3>
+<p><b>Status:</b> The posting was open when I re-read it on 26 November. It shows "Application Deadline 12/01/2026" and "Open Until Filled: No", so 1 December is a hard cutoff.</p>
+<p><b>Why it ranks first this week:</b> The ad asks for a scholar who "develops and applies cutting-edge geospatial computational methods", names machine and deep learning, and lists weather and climate change among its applied domains. Your dissertation and your first-author ACM TIST and SIGSPATIAL papers are in this exact area. The skeptical chair rated the file "likely" for the long list.</p>
+<p><b>The risk:</b> The minimum is a "PhD in Geography or a related field by the time of appointment". A Computer Science PhD in spatial data science very likely counts as related, but the ad does not say so. A geography committee will also ask how your methods answer geographic questions.</p>
+<p><b>What it needs:</b> A one-page cover letter, a CV, a two-page research statement, a two-page teaching statement, a one-page mentoring statement, and the names of four references. Letters are requested later. You have three letter writers on record, so you need a fourth name.</p>
+<p><b>People:</b> Dr. Paul Delamater is named in the ad as search committee chair. No tie to Prof. Shekhar or Prof. Kumar was found in the department.</p>
+<p><b>Lead with:</b> physics-informed and knowledge-guided GeoAI, framed as methods for climate, mobility and human-environment questions. The teaching statement should address the department's new B.S. in Geospatial Data Science.</p></div>
+
+<div class="card"><h3>2. Ohio State CSE: AI World Models for Embodied Systems</h3>
+<p><b>Status:</b> Interfolio 194540 was open on 26 November and its posting ends on 30 November. The sheet lists three Ohio State searches, and this is a fourth one.</p>
+<p><b>Why it is here:</b> The ad names "multimodal and spatiotemporal learning, context-informed and knowledge (e.g., physics)-grounded AI, generative and predictive modeling" and lists traffic and urban mobility as an application. The 30% joint home can be civil, environmental and geodetic engineering.</p>
+<p><b>The risk:</b> The required record is in world models, embodied AI, robot learning or vision, which your papers do not show. The ad says visa sponsorship "may be available in limited situations".</p>
+<p><b>What it needs:</b> Names of three references only. The ad says "Please do not upload letters".</p>
+<p><b>Skip at Ohio State:</b> the programming-languages search, the responsible AI and cybersecurity search, and the foundational AI search, which asks for theory of machine learning.</p></div>
+
+<div class="card"><h3>3. UC Irvine EECS: AI/ML</h3>
+<p><b>Status:</b> JPF10407 is open. The review date is 1 December at 11:59 pm Pacific, and the final date is 15 February 2027.</p>
+<p><b>Why it is here:</b> The ad names AI-driven cyber-physical systems including transportation, AI for scientific discovery including climate science, and safety of AI.</p>
+<p><b>The risk:</b> One block of the ad says the doctorate is "required at time of application", and another says "at the time of hire". The chair read was "unlikely" because this is one position that leads with AI fundamentals.</p>
+<p><b>What it needs:</b> Contact details for three to five references, with no letters at submission.</p></div>
+
+<div class="card"><h3>4. Boston University, Computing and Data Sciences: AI for Science and Engineering</h3>
+<p><b>Status:</b> AJO 32632 is open with no hard deadline. The priority date is 1 December and review runs to 30 April 2027.</p>
+<p><b>Why it is here:</b> The ad names physics-informed machine learning and climate and environmental modeling.</p>
+<p><b>The risk:</b> Your writers must upload three letters on AJO. The recent hires came from Princeton, Berkeley and similar programs, often after a named postdoc. The chair read was "unlikely".</p>
+<p><b>People:</b> Dokyun Lee says in his own public post that he sits on the committee. His research does not overlap with yours.</p></div>
+
+<div class="card"><h3>5. CU Boulder, Atmospheric and Oceanic Sciences: physics-informed AI (your call)</h3>
+<p><b>Status:</b> Requisition 75421 gives full consideration to applications received by 1 December and stays open until 1 June 2027. Two agents read the posting. I could not re-open the CU portal from my own shell, so I did not re-check it myself.</p>
+<p><b>Why it is here:</b> The ad names Aneesh Subramanian as search committee chair. He is your co-author on the SIGSPATIAL 2024 sea-level paper and a co-PI on the same NSF institute as Prof. Shekhar. The ad accepts a PhD in Computer Science.</p>
+<p><b>The risk:</b> This is an atmospheric-science line on boundary-layer and coupled Earth system processes, and the chair read was "unlikely" on fit. A chair who has co-authored with an applicant usually has to step back from that file.</p>
+<p><b>My suggestion:</b> Ask him directly whether your profile is in scope before you spend time on it. That decision and that message are yours.</p></div>
+</section>
+
+<section class="page" id="cycle">
+<h1>Apply this cycle</h1>
+<p class="lead">These nine searches have the best realistic odds. Their dates run from 6 December to 31 January, and several review applications as they arrive.</p>
+<table><tr><th>#</th><th>Search</th><th>Track</th><th>Date</th><th>References</th><th>Fit</th><th>Odds</th><th>Long list</th></tr>
+<tr><td>1</td><td><b>UMBC, Information Systems</b><br><a href="https://apply.interfolio.com/195159" target="_blank" rel="noopener">Assistant Professor in Trustworthy AI (Interfolio 195159)</a></td><td>Tenure-track, assistant, one position</td><td>Full consideration 10 Dec 2026, then until filled</td><td>Names of at least three references</td><td>3</td><td>Plausible</td><td>Possible</td></tr>
+<tr><td>2</td><td><b>University of Michigan-Flint, College of Innovation and Technology</b><br><a href="https://apply.interfolio.com/192932" target="_blank" rel="noopener">Assistant Professor, Computing Division (Interfolio 192932)</a></td><td>Tenure-track, assistant, several positions</td><td>Review since 30 Sep 2026, materials by 31 Jan 2027</td><td>Names of three references</td><td>3</td><td>Plausible</td><td>Likely</td></tr>
+<tr><td>3</td><td><b>Purdue University in Indianapolis, Applied and Creative Computing</b><br><a href="https://careers.purdue.edu/job/Assistant-or-Associate-Professor-%28Tenure-Track%29-in-Applied-Computing/44069-en_US/" target="_blank" rel="noopener">Assistant or Associate Professor in Applied Computing (req 44069)</a></td><td>Tenure-track, assistant or associate</td><td>Review begins 20 Dec 2026, then until filled</td><td>Contact details for five references</td><td>2</td><td>Plausible</td><td>Possible</td></tr>
+<tr><td>4</td><td><b>University of North Florida, School of Computing</b><br><a href="https://unf.wd5.myworkdayjobs.com/unfjobs/job/Jacksonville-FL/Assistant-Professor---School-of-Computing_JR103389" target="_blank" rel="noopener">Assistant Professor, all areas of computing (JR103389)</a></td><td>Tenure-track, assistant</td><td>Review since 31 Aug 2026, open until filled</td><td>Names of three references</td><td>2</td><td>Plausible</td><td>Possible</td></tr>
+<tr><td>5</td><td><b>UNC Charlotte, College of Computing and Informatics</b><br><a href="https://jobs.charlotte.edu/postings/72124" target="_blank" rel="noopener">Up to five Assistant Professors (posting 72124)</a></td><td>Tenure-track, assistant, up to five positions</td><td>Review begins 14 Dec 2026, then until filled</td><td>Contact details for at least three references</td><td>3</td><td>Long shot to plausible</td><td>Possible</td></tr>
+<tr><td>6</td><td><b>Vanderbilt, College of Connected Computing</b><br><a href="https://apply.interfolio.com/196229" target="_blank" rel="noopener">Assistant Professor, all areas (Interfolio 196229)</a></td><td>Tenure-track, assistant, several positions</td><td>Full consideration 15 Dec 2026</td><td>Three to five reference contacts (Interfolio emails them at once)</td><td>3</td><td>Long shot to plausible</td><td>Possible</td></tr>
+<tr><td>7</td><td><b>Virginia Tech, Civil and Environmental Engineering</b><br><a href="https://careers.pageuppeople.com/968/cw/en-us/job/538604" target="_blank" rel="noopener">Assistant Professor, AI in Civil and Environmental Engineering (job 538604)</a></td><td>Tenure-track, assistant</td><td>Review dated 4 Jan 2027, no closing date</td><td>Not stated in the ad</td><td>3</td><td>Long shot</td><td>Possible</td></tr>
+<tr><td>8</td><td><b>College of Staten Island (CUNY), Information Systems and Informatics</b><br><a href="https://cuny.jobs/staten-island-ny/assistant-associate-or-full-professor-information-systems-informatics/D225BA8E17254AE9BCD268542761B287/job/" target="_blank" rel="noopener">Assistant, Associate or Full Professor (Job ID 32725)</a></td><td>Open rank</td><td>Closes 6 Dec 2026</td><td>Names of at least three references</td><td>2</td><td>Long shot</td><td>Possible</td></tr>
+<tr><td>9</td><td><b>Stony Brook, AI Innovation Institute</b><br><a href="https://apply.interfolio.com/183806" target="_blank" rel="noopener">AI Innovation Research Assistant Professor cohort (Interfolio 183806)</a></td><td>Research track, not tenure-track</td><td>No deadline, processed as received</td><td>Names of two references</td><td>2</td><td>Insufficient evidence</td><td>Not assessed</td></tr>
+</table>
+
+<div class="card"><h3>1. UMBC Information Systems: Trustworthy AI</h3>
+<p><b>Status:</b> Interfolio 195159 was open when I re-read it on 26 November. Applications received by 10 December get full consideration.</p>
+<p><b>Why it ranks first:</b> The department already works on spatiotemporal anomaly detection and physics-informed climate ML. Its five sourced recent hires publish in applied venues, so your record is in range. The ad "particularly" encourages trustworthy AI with real-world impact.</p>
+<p><b>Network:</b> Vandana Janeja is PI and Jianwu Wang is co-PI of NSF 2118285, the iHARP institute, and Prof. Shekhar is a co-PI on the same award. I confirmed the award record myself. Both are core faculty in this department. Four of your own papers are listed as outputs of that award. No source gives either of them a role in this search, and the committee is not public.</p>
+<p><b>The risk:</b> There is one position. A committee will ask whether your papers are about the trustworthiness of AI models or about anomaly detection in trajectory data. You have no first-author paper on robustness evaluation, verification or uncertainty quantification.</p>
+<p><b>What it needs:</b> A cover letter that addresses UMBC's mission, a CV, a two-page research statement, a one-page teaching statement, and the names of at least three references.</p>
+<p><b>Lead with:</b> physics-based trajectory-gap and spoofing detection as trustworthy AI for security-critical systems, with physics consistency presented as a verification constraint.</p></div>
+
+<div class="card"><h3>2. University of Michigan-Flint: Computing Division</h3>
+<p><b>Status:</b> Interfolio 192932 is open. Review began on 30 September, and the ad says the opening may be filled at any time, so an early application is better than one on 31 January.</p>
+<p><b>Why it is here:</b> The ad lists "data mining and knowledge discovery", "responsible, trustworthy, and safe AI" and "AI for science". The chair read was "likely" for the long list, the only such rating on the sheet.</p>
+<p><b>The risk:</b> The ad leans toward cybersecurity, no faculty member works in your area, and the role carries a heavy teaching load across in-person and online formats. You have no course as instructor of record.</p></div>
+
+<div class="card"><h3>3. Purdue University in Indianapolis: Applied Computing</h3>
+<p><b>Status:</b> Requisition 44069 is open. Review begins on 20 December.</p>
+<p><b>Why it is here:</b> The search is open to all of applied computing and names trustworthy computing, security of critical infrastructure and applied AI. Recent hires come from applied venues.</p>
+<p><b>The risk:</b> The ad asks for five references, and you have three letter writers. Security faculty will ask for the threat model behind the spoofing work.</p>
+</div>
+
+<div class="card"><h3>4. University of North Florida: School of Computing</h3>
+<p><b>Status:</b> JR103389 is open until filled, and review began on 31 August.</p>
+<p><b>Why it is here:</b> The search covers all areas of computing, the school has marine-AI and cyber-physical faculty, and its hires come from applied venues.</p>
+<p><b>The risk:</b> The teaching load is two courses per semester. Florida requires a foreign-influence review section, and the ad does not mention sponsorship.</p></div>
+
+<div class="card"><h3>5. UNC Charlotte: College of Computing and Informatics</h3>
+<p><b>Status:</b> Posting 72124 is open, and review begins on 14 December.</p>
+<p><b>Why it is here:</b> The college is hiring up to five assistant professors. The ad names "physics-informed AI", "AI for discovery across natural sciences" and "robust and reliable AI", and it encourages work in "high-impact national strategic domains".</p>
+<p><b>The risk:</b> The two sourced 2025 machine-learning hires bring main-track papers. Your first-author physics-informed diffusion paper is a workshop paper.</p>
+<p><b>People:</b> Dr. Jessica Roseberry is named as search committee chair. She works in bioinformatics.</p></div>
+
+<div class="card"><h3>6. Vanderbilt: College of Connected Computing</h3>
+<p><b>Status:</b> Interfolio 196229 is open, with full consideration by 15 December.</p>
+<p><b>Why it is here:</b> The college is new and expanding, the search is open across computing, and it names scientific machine learning and secure, trustworthy systems. Its faculty include Abhishek Dubey and Meiyi Ma, who work on transportation and trustworthy cyber-physical systems.</p>
+<p><b>The risk:</b> The research statement can run to five pages and must include a funding plan. Interfolio emails your referees as soon as you submit, so tell them first.</p></div>
+
+<div class="card"><h3>7. Virginia Tech, Civil and Environmental Engineering: AI in CEE</h3>
+<p><b>Status:</b> Job 538604 is open, and review is dated 4 January 2027. It is not on the sheet.</p>
+<p><b>Why it is here:</b> The ad names "physics-informed or hybrid models, uncertainty quantification" and the transportation program area, and it accepts a doctorate in "a closely related discipline (such as computer science or electrical engineering)".</p>
+<p><b>The risk:</b> The ad requires published AI work on civil or environmental engineering problems. Recent hires hold civil engineering PhDs.</p></div>
+
+<div class="card"><h3>8 and 9. College of Staten Island and Stony Brook AI Innovation Institute</h3>
+<p><b>College of Staten Island:</b> The search closes on 6 December, names trustworthy AI and prefers a Computer Science PhD. It sits in a business school and leans toward teaching.</p>
+<p><b>Stony Brook:</b> The research assistant professor cohort has no deadline and asks for two references. It is a research track with two years of full support.</p></div>
+</section>
+
+<section class="page" id="network">
+<h1>Committees and ties</h1>
+<p class="lead">Most search committees are not public. This page separates the people a source names in a search role from the people who simply work in the hiring unit.</p>
+<h2>People named in a search role</h2>
+<table>
+<tr><th>Search</th><th>Person and role as the source states it</th><th>Tie to Prof. Shekhar, Prof. Kumar or you</th></tr>
+<tr><td>CU Boulder ATOC, physics-informed AI (not on the sheet)</td><td>Aneesh Subramanian, search committee chair</td><td><b><span class="term" data-def="T1: a PhD advisee of Prof. Shekhar or Prof. Kumar, or your own co-author or committee member.">T1</span>:</b> your co-author (SIGSPATIAL 2024), and a co-PI with Prof. Shekhar on NSF 2118285</td></tr>
+<tr><td>UNC Chapel Hill Geography, GeoAI (not on the sheet)</td><td>Paul Delamater, search committee chair</td><td>None found</td></tr>
+<tr><td>UNC Charlotte CCI</td><td>Jessica Roseberry, search committee chair</td><td>None found</td></tr>
+<tr><td>Arizona State SCAI, AI with Real-World Impact</td><td>Hannah Kerner, search committee chair</td><td>Weak. The only shared item with Prof. Kumar is a 24-author workshop report from 2023. The tie refuter downgraded it.</td></tr>
+<tr><td>Arizona State SCAI, two more searches (not on the sheet)</td><td>Rong Pan and Gail-Joon Ahn, search committee chairs</td><td>None found</td></tr>
+<tr><td>Virginia Tech CEE (not on the sheet)</td><td>Eric Jacques and Linsey Marr, named as co-chairs</td><td>None found</td></tr>
+<tr><td>Virginia Tech CS</td><td>Kurt Luther, on the committee by his own public post</td><td>None. He works in HCI.</td></tr>
+<tr><td>Boston University CDS</td><td>Dokyun Lee, on the committee by his own public post</td><td>None</td></tr>
+<tr><td>Stony Brook Technology, AI and Society</td><td>Todd Pittinsky, search committee chair</td><td>None</td></tr>
+<tr><td>Bocconi Computing Sciences</td><td>Buffa, Mézard, Lucibello and Celli, the committee named in the call</td><td>None</td></tr>
+</table>
+<h2>Ties inside a hiring department (no search role is public)</h2>
+<table>
+<tr><th>Hiring unit</th><th>Person</th><th>Tie and source</th><th>Verdict of the tie refuter</th></tr>
+<tr><td>UMBC Information Systems</td><td>Vandana Janeja and Jianwu Wang</td><td><b><span class="term" data-def="T3: a repeated co-author (three or more joint papers, or one in the last five years) or a grant co-PI.">T3</span>:</b> PI and co-PI of NSF 2118285 (iHARP, 2022 to 2027) with Prof. Shekhar as co-PI</td><td>Confirmed. I also checked the NSF award record myself.</td></tr>
+<tr><td>Virginia Tech Computer Science</td><td>Chang-Tien Lu</td><td><b><span class="term" data-def="T1: a PhD advisee of Prof. Shekhar or Prof. Kumar, or your own co-author or committee member.">T1</span>:</b> PhD advisee of Prof. Shekhar (2002 on his CV)</td><td>Confirmed. He is based in Northern Virginia, and the search is for Blacksburg.</td></tr>
+<tr><td>Purdue Computer Science (not on the sheet)</td><td>Ananth Grama</td><td><b><span class="term" data-def="T1: a PhD advisee of Prof. Shekhar or Prof. Kumar, or your own co-author or committee member.">T1</span>:</b> PhD advisee of Prof. Kumar (1996), and co-author of their textbook</td><td>Confirmed for Grama. The claimed tie through Walid Aref is weak.</td></tr>
+<tr><td>University of Virginia Computer Science</td><td>Aidong Zhang</td><td><b><span class="term" data-def="T3: a repeated co-author (three or more joint papers, or one in the last five years) or a grant co-PI.">T3</span>:</b> co-PI with Prof. Kumar on NSF 2309660 (2023 to 2025) and two workshop reports</td><td>Confirmed</td></tr>
+<tr><td>UT Austin Computer Science</td><td>Volkan Isler</td><td><b><span class="term" data-def="T2: a former postdoc of either professor, a former Minnesota CS faculty colleague, or a Minnesota CS PhD alumnus.">T2</span>:</b> Minnesota CS faculty from 2008 to 2024</td><td>Confirmed as a former colleague. His joint papers with Ravi Janardan and David Mulla are one each.</td></tr>
+</table>
+<h2>Corrections</h2>
+<ul>
+<li><b>Anuj Karpatne:</b> He is now a professor in Electrical and Computer Engineering at the University of Florida. His own page dates his Virginia Tech years as 2018 to 2026.</li>
+<li><b>Yiqun Xie:</b> He is in Geographical Sciences at Maryland and holds no appointment in Computer Science, so he is outside the Maryland CS search.</li>
+<li><b>Penn State:</b> Guido Cervone and Zhenlong Li are in Geography. Their joint work with Prof. Shekhar is two community agenda papers, which is a weak tie.</li>
+</ul>
+<div class="callout"><b>Related people at institutions with no row on the sheet:</b> Zhe Jiang (Florida, your co-author), Xiaowei Jia (Pittsburgh), Pang-Ning Tan (Michigan State), Ranga Raju Vatsavai (NC State), Varun Chandola (Buffalo) and KwangSoo Yang (Florida Atlantic).</div>
+</section>
+
+<section class="page" id="longshots">
+<h1>Long shots</h1>
+<p class="lead">These searches are open and you are eligible, but the evidence puts each one at long odds. Apply where the cost is low, or where someone listed on page 4 can speak for the file.</p>
+<table><tr><th>#</th><th>Search</th><th>Date</th><th>References</th><th>Fit</th><th>Tie</th><th>Note</th></tr>
+<tr><td>1</td><td><b>UT Austin, Computer Science</b><br><a href="https://apply.interfolio.com/194129" target="_blank" rel="noopener">Open-rank, all areas, AI for Science named (Interfolio 194129)</a></td><td>Review starts 1 Dec 2026, portal to 31 May 2027</td><td>Names only</td><td>3</td><td>T2: Volkan Isler was Minnesota CS faculty from 2008 to 2024</td><td>Low cost because only names are needed. Top-ten department.</td></tr>
+<tr><td>2</td><td><b>Virginia Tech, Computer Science</b><br><a href="https://jobs.apply.vt.edu/jobs/tenure-track-faculty-position-in-computer-science-blacksburg-virginia-united-states" target="_blank" rel="noopener">Multiple Assistant Professors, Blacksburg</a></td><td>Review since 15 Nov 2026, until filled</td><td>Names only</td><td>2</td><td>T1: Chang-Tien Lu (Shekhar PhD) is core CS faculty, based in Northern Virginia</td><td>The search gives special weight to AI and ML, with HCI named as a focus. Anuj Karpatne has left for Florida.</td></tr>
+<tr><td>3</td><td><b>Purdue, Computer Science</b><br><a href="https://careers.purdue.edu/job/AssistantAssociate-Professor-of-Computer-Science/44401-en_US/" target="_blank" rel="noopener">Assistant or Associate Professor, West Lafayette and Indianapolis (req 44401)</a></td><td>Review since 23 Nov 2026, until filled</td><td>Names only</td><td>3</td><td>T1: Ananth Grama (Kumar PhD, 1996) is core CS faculty and directs IPAI</td><td>The ad names scientific machine learning.</td></tr>
+<tr><td>4</td><td><b>University of Virginia, Computer Science</b><br><a href="https://apply.interfolio.com/190949" target="_blank" rel="noopener">Open-rank, AI emphasis (Interfolio 190949)</a></td><td>Review since 15 Nov 2026, no closing date</td><td>Names only</td><td>2</td><td>T3: Aidong Zhang was co-PI with Prof. Kumar on NSF 2309660</td><td>Names cyber-physical systems and the Link Lab.</td></tr>
+<tr><td>5</td><td><b>Penn State, Informatics and Intelligent Systems</b><br><a href="https://psu.wd1.myworkdayjobs.com/PSU_Academic/job/Penn-State-University-Park/Tenure-line-Faculty-Positions-in-Artificial-Intelligence-_REQ_0000083172-1" target="_blank" rel="noopener">Tenure-line faculty in AI (REQ_0000083172)</a></td><td>Review since 1 Nov 2026, until filled</td><td>Names only</td><td>3</td><td>None in the unit (Cervone and Li are in Geography)</td><td>Names AI for the sciences and critical infrastructure. The college plans at least 12 hires.</td></tr>
+<tr><td>6</td><td><b>Penn State, ICDS AI co-hire (tenure home in IST)</b><br><a href="https://psu.wd1.myworkdayjobs.com/PSU_Academic/job/Penn-State-University-Park/Tenured-Tenure-line-Positions-in-Interdisciplinary-Research--and--AI--ICDS-Co-hire-_REQ_0000082162-1" target="_blank" rel="noopener">Foundations of AI and AI + X (REQ_0000082162)</a></td><td>Full consideration 7 Dec 2026</td><td>Four references named in one PDF</td><td>2</td><td>Weak: Guido Cervone shares two community agenda papers with Prof. Shekhar</td><td>The position stresses foundational methods.</td></tr>
+<tr><td>7</td><td><b>Arizona State, Computing and Augmented Intelligence</b><br><a href="https://apply.interfolio.com/194258" target="_blank" rel="noopener">AI with Real-World Impact (Interfolio 194258)</a></td><td>Deadline 29 Oct passed, rolling reserve pool</td><td>Names only</td><td>3</td><td>Weak: the chair shares one 24-author workshop report with Prof. Kumar</td><td>Names earth science, sustainability and cybersecurity. A late file enters a reserve pool.</td></tr>
+<tr><td>8</td><td><b>Arizona State, Computing and Augmented Intelligence</b><br><a href="https://apply.interfolio.com/194202" target="_blank" rel="noopener">AI for Infrastructure and Supply Chain Resilience (Interfolio 194202)</a></td><td>Deadline 29 Oct passed, rolling reserve pool</td><td>Names only</td><td>3</td><td>None</td><td>Names disruption detection, digital twins and trustworthy AI for infrastructure.</td></tr>
+<tr><td>9</td><td><b>Arizona State, Computing and Augmented Intelligence</b><br><a href="https://apply.interfolio.com/195357" target="_blank" rel="noopener">Secure and Trustworthy AI Systems (Interfolio 195357)</a></td><td>Deadline 25 Nov passed, rolling reserve pool</td><td>Names only</td><td>3</td><td>None</td><td>Centers on securing AI systems. Your link is the maritime and GPS-spoofing work.</td></tr>
+<tr><td>10</td><td><b>University of Chicago, Data Science</b><br><a href="https://apply.interfolio.com/194104" target="_blank" rel="noopener">Assistant Professor of Data Science</a></td><td>Review since 1 Nov 2026, until filled</td><td>Letters at submission</td><td>3</td><td>None</td><td>Names scientific AI and trustworthy AI. Recent hires bring main-track ML records.</td></tr>
+<tr><td>11</td><td><b>UC Berkeley, EECS and Statistics (BIDMaP)</b><br><a href="https://aprecruit.berkeley.edu/JPF05619" target="_blank" rel="noopener">AI and the Physical Sciences (JPF05619)</a></td><td>Hard date 11 Dec 2026</td><td>Three letters uploaded by the deadline</td><td>3</td><td>None</td><td>The best topical match at Berkeley, in a top-five pool.</td></tr>
+<tr><td>12</td><td><b>UW-Madison, Computer Sciences</b><br><a href="https://academicjobsonline.org/ajo/jobs/33161" target="_blank" rel="noopener">Open-rank, all areas (JR10016108 and AJO 33161)</a></td><td>Full consideration 15 Dec 2026</td><td>Letters at submission</td><td>2</td><td>Outside the unit: Licheng Liu (your co-author) and Song Gao (Geography)</td><td>Names AI for science problems in one phrase. Needs two parallel applications.</td></tr>
+<tr><td>13</td><td><b>UNC Chapel Hill, Computer Science</b><br><a href="https://unc.peopleadmin.com/postings/326195" target="_blank" rel="noopener">Safeguarding AI in Health</a></td><td>Screening from 1 Dec 2026, hard deadline 4 Jan 2027</td><td>Names of four references</td><td>2</td><td>None of weight</td><td>A reliable-AI line tied to health. No rush this week.</td></tr>
+<tr><td>14</td><td><b>Texas A&amp;M, Computer Science and Engineering</b><br><a href="https://apply.interfolio.com/192732" target="_blank" rel="noopener">Ten positions, all ranks (Interfolio 192732)</a></td><td>Review by 1 Dec 2026, until filled</td><td>Names only</td><td>2</td><td>None</td><td>Ten positions and ABD candidates accepted. Your area is not among the six named.</td></tr>
+<tr><td>15</td><td><b>UMass Lowell, Miner School</b><br><a href="https://explorejobs.uml.edu/en-us/job/530087/open-rank-tenuretrack-faculty-in-core-ai-miner-school-of-computer-information-sciences" target="_blank" rel="noopener">Open-rank faculty in Core AI (job 530087)</a></td><td>Review since 30 Jul 2026, no closing date</td><td>Names only</td><td>2</td><td>None</td><td>Headline areas are LLMs, foundation models and agents.</td></tr>
+<tr><td>16</td><td><b>University of Maryland, Computer Science</b><br><a href="https://umd.wd1.myworkdayjobs.com/UMCP/job/University-of-Maryland-College-Park/Assistant-Professor--Associate-Professor--Professor_JR105221" target="_blank" rel="noopener">Open-rank, all areas</a></td><td>Best consideration 31 Dec 2026</td><td>Letters requested later</td><td>2</td><td>Outside the unit: Yiqun Xie (Shekhar PhD) is in Geographical Sciences</td><td>Named priorities are quantum and health computing.</td></tr>
+<tr><td>17</td><td><b>NYU Courant</b><br><a href="https://apply.interfolio.com/196622" target="_blank" rel="noopener">Assistant Professors in AI for Science, four positions (Interfolio 196622)</a></td><td>Full consideration 8 Jan 2027</td><td>Letters at submission</td><td>3</td><td>None</td><td>The degree line lists physical sciences, chemistry, biology and cognitive science, so a CS PhD may not qualify.</td></tr>
+<tr><td>18</td><td><b>Notre Dame, Computer Science and Engineering</b><br><a href="https://apply.interfolio.com/195819" target="_blank" rel="noopener">Ethics and Computing, open rank</a></td><td>Portal closes 15 Dec 2026</td><td>Names only</td><td>2</td><td>None of weight</td><td>Centered on fairness, governance and sociotechnical evaluation.</td></tr>
+<tr><td>19</td><td><b>Cornell, Information Science (Cornell Tech)</b><br><a href="https://academicjobsonline.org/ajo/jobs/33106" target="_blank" rel="noopener">Tenure-track faculty, NYC campus (AJO 33106)</a></td><td>Review 1 Dec 2026, including letters</td><td>Three letters uploaded by the writers</td><td>2</td><td>Outside the unit: Carla Gomes (CS) has co-authored with Prof. Shekhar</td><td>Names urban technology, in a human-centered unit.</td></tr>
+<tr><td>20</td><td><b>UC San Diego, Computer Science and Engineering</b><br><a href="https://apol-recruit.ucsd.edu/JPF04649" target="_blank" rel="noopener">Assistant Professor, all areas (JPF04649)</a></td><td>Review 1 Dec 2026, final 2 Jun 2027</td><td>Three letters required, timing not stated</td><td>2</td><td>None</td><td>Top-ranked open pool.</td></tr>
+<tr><td>21</td><td><b>Boston University, Computer Science</b><br><a href="https://academicjobsonline.org/ajo/jobs/33223" target="_blank" rel="noopener">Assistant Professor in AI (AJO 33223)</a></td><td>AJO deadline field 15 Nov passed, full consideration 1 Dec</td><td>Three letters uploaded by the writers</td><td>2</td><td>None</td><td>It is not confirmed that AJO still accepts a submission.</td></tr>
+<tr><td>22</td><td><b>University of Minnesota, Electrical and Computer Engineering</b><br><a href="https://apply.interfolio.com/194224" target="_blank" rel="noopener">Assistant Professor (Interfolio 194224)</a></td><td>Priority 26 Nov 2026, until filled</td><td>Three letters attached with the application</td><td>2</td><td>None in ECE</td><td>Your own university. The AI area is framed around optimization and signal processing.</td></tr>
+<tr><td>23</td><td><b>UCLA, Computer Science</b><br><a href="https://recruit.apo.ucla.edu/JPF11410" target="_blank" rel="noopener">Multiple Assistant Professors (open area)</a></td><td>Full consideration 14 Dec 2026, final 30 Jun 2027</td><td>Names only</td><td>2</td><td>None</td><td>Open area, elite pool.</td></tr>
+<tr><td>24</td><td><b>NYU, Computer Science (Courant and Tandon)</b><br><a href="https://apply.interfolio.com/195724" target="_blank" rel="noopener">Open-rank, all areas</a></td><td>Recommended by 15 Dec 2026</td><td>Letters at submission</td><td>2</td><td>None</td><td>Open area, elite pool.</td></tr>
+<tr><td>25</td><td><b>University of Chicago, Computer Science</b><br><a href="https://apply.interfolio.com/193574" target="_blank" rel="noopener">Assistant Professor</a></td><td>Review since 15 Oct 2026</td><td>Letters at submission</td><td>2</td><td>None</td><td>Emphasis on systems, AI and robotics.</td></tr>
+<tr><td>26</td><td><b>University of Utah, Kahlert School of Computing</b><br><a href="https://utah.peopleadmin.com/postings/212255" target="_blank" rel="noopener">Three to four Assistant or Associate Professors</a></td><td>Review after 7 Dec 2026</td><td>Not stated</td><td>2</td><td>None</td><td>Named areas are robotics, AI systems, quantum and space computing.</td></tr>
+<tr><td>27</td><td><b>University of Washington, Information School</b><br><a href="https://apply.interfolio.com/192128" target="_blank" rel="noopener">Assistant Professor in AI (Interfolio 192128)</a></td><td>Full consideration 15 Nov passed, until filled</td><td>Names only</td><td>2</td><td>None in the unit</td><td>The ad requires three years of research experience and names NLP and governance.</td></tr>
+<tr><td>28</td><td><b>University of Virginia, School of Data Science</b><br><a href="https://apply.interfolio.com/191214" target="_blank" rel="noopener">Open-rank, Data and Society</a></td><td>Review since 1 Nov 2026</td><td>Names only</td><td>2</td><td>Affiliate only: Aidong Zhang</td><td>The search is for data, society and AI.</td></tr>
+<tr><td>29</td><td><b>Washington University in St. Louis, Statistics and Data Science</b><br><a href="https://apply.interfolio.com/190548" target="_blank" rel="noopener">Open-rank +AI faculty (Interfolio 190548)</a></td><td>Full consideration 15 Nov passed</td><td>Letters at submission</td><td>3</td><td>None</td><td>Requires a PhD in statistics or a relevant data science field. Recent hires are statisticians.</td></tr>
+<tr><td>30</td><td><b>Washington University in St. Louis, Arts and Sciences</b><br><a href="https://apply.interfolio.com/191452" target="_blank" rel="noopener">AI for Modeling the Physical World and Living Systems (Interfolio 191452)</a></td><td>Fullest consideration 1 Oct passed</td><td>Names only</td><td>2</td><td>None</td><td>CS is not on the listed degree fields. The engineering school&#x27;s +AI searches are not posted yet.</td></tr>
+<tr><td>31</td><td><b>Stony Brook, Technology, AI and Society</b><br><a href="https://apply.interfolio.com/195848" target="_blank" rel="noopener">Assistant or Associate Professor (Interfolio 195848)</a></td><td>Full consideration 1 Jan 2027</td><td>Names only</td><td>2</td><td>None</td><td>Requires a research agenda on AI and society.</td></tr>
+<tr><td>32</td><td><b>Virginia Tech, Electrical and Computer Engineering</b><br><a href="https://careers.pageuppeople.com/968/cw/en-us/job/538286/faculty-position-in-physical-ai-and-assured-autonomous-systems" target="_blank" rel="noopener">Physical AI and Assured Autonomous Systems (job 538286)</a></td><td>Review begins 20 Jan 2027</td><td>Names only</td><td>3</td><td>None in the unit</td><td>Names maritime and transportation domains, with a hardware and control focus.</td></tr>
+<tr><td>33</td><td><b>University of Maryland, Agriculture and Natural Resources</b><br><a href="https://umd.wd1.myworkdayjobs.com/UMCP/job/University-of-Maryland-College-Park/Assistant-Professor-1_JR103283" target="_blank" rel="noopener">Assistant Professor, AI for Agriculture and Natural Resources (JR103283)</a></td><td>Best consideration 28 Feb 2026 passed</td><td>Names only</td><td>3</td><td>Outside the unit: Yiqun Xie</td><td>The cluster may already be filled.</td></tr>
+<tr><td>34</td><td><b>University of Washington, Allen School</b><br><a href="https://apply.interfolio.com/194089" target="_blank" rel="noopener">Open-rank, all areas (Interfolio 194089)</a></td><td>Full consideration 15 Nov passed</td><td>Names of four referees</td><td>2</td><td>None</td><td>Open area, elite pool.</td></tr>
+<tr><td>35</td><td><b>UW-Madison, Information School</b><br><a href="https://jobs.wisc.edu/jobs/assistant-associate-full-professor-madison-wisconsin-united-states-4be8a3be-7798-4484-a63a-350866537334" target="_blank" rel="noopener">Open-rank, library and information science (JR10016125)</a></td><td>Full consideration 1 Dec 2026</td><td>Names only</td><td>1</td><td>Community only</td><td>Requires a PhD in information sciences or a closely related field.</td></tr>
+</table>
+<div class="callout"><b>Northwestern engineering (checked because row R040 points to it):</b> Two department searches sit behind the Innovation Institute row, and both are long shots. Engineering Sciences and Applied Mathematics has two positions, starts review on 1 December, and hires applied mathematicians. Industrial Engineering and Management Sciences names AI and machine learning, but its full-consideration date of 16 November has passed and it hires operations researchers. Both ads say H-1B sponsorship "may be available". No tie to Prof. Shekhar or Prof. Kumar was found in either unit.</div>
+
+</section>
+
+<section class="page" id="tracks">
+<h1>Tracks, non-US searches and fellowships</h1>
+<h2>What track the relevant rows are</h2>
+<ul>
+<li><b>Tenure-track at the assistant level:</b> the large majority of the ranked searches, including every search on pages 2 and 3 except two.</li>
+<li><b>Open rank:</b> Arizona State, Penn State ICDS, UT Austin, Berkeley, Maryland, UVA, NYU CS, Notre Dame, Wisconsin, Texas A&amp;M, and College of Staten Island. You would apply at the assistant level, and you compete with senior applicants for the same line.</li>
+<li><b>Research track:</b> the Stony Brook AI Innovation Institute cohort is a research assistant professor role, with full support for two years.</li>
+<li><b>Senior only:</b> Chicago's associate professor of data science, the NYU data science chair, and Toronto's two senior postings are closed to you by rank.</li>
+</ul>
+<h2>Non-US searches</h2>
+<p>US post-completion OPT does not cover these roles. The two Canadian universities give priority to Canadians and permanent residents.</p>
+<table><tr><th>#</th><th>Search</th><th>Track</th><th>Date</th><th>Fit</th><th>Odds</th><th>Note</th></tr>
+<tr><td>1</td><td><b>Aarhus University, Computer Science (Denmark)</b><br><a href="https://cs.au.dk/about-us/vacancies/job/open-rank-faculty-positions-in-computer-science-at-aarhus-university-denmark" target="_blank" rel="noopener">Up to three faculty, open rank</a></td><td>Tenure-track assistant to full</td><td>Hard deadline 18 Jan 2027</td><td>3</td><td>Long shot</td><td>Names data mining and trustworthy AI. The tenure-track norm is two to six years after the PhD.</td></tr>
+<tr><td>2</td><td><b>University of Toronto, Computer Science (Canada)</b><br><a href="https://jobs.utoronto.ca/job/Toronto-Assistant-Professor-Computer-Science-ON/607352617/" target="_blank" rel="noopener">Assistant Professors at three campuses (AJO 32399)</a></td><td>Tenure-stream, assistant</td><td>Hard deadline 15 Dec 2026</td><td>2</td><td>Long shot</td><td>Canadians and permanent residents get priority.</td></tr>
+<tr><td>3</td><td><b>University of Alberta, Engineering (Canada)</b><br><a href="https://iaejup.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/UOA-Careers/job/4561/" target="_blank" rel="noopener">Canada Impact+ Emerging Leader, Sustainable Transportation Futures (req 4561)</a></td><td>Tenure-track, assistant or associate</td><td>Closes 13 Dec 2026</td><td>3</td><td>Long shot</td><td>Names marine transportation and digital systems, in a national competition.</td></tr>
+<tr><td>4</td><td><b>University of Alberta, Computing Science (Canada)</b><br><a href="https://iaejup.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/UOA-Careers/job/4539/" target="_blank" rel="noopener">Assistant Professor, AI for Health</a></td><td>Tenure-track, assistant</td><td>Full consideration 8 Jan 2027</td><td>2</td><td>Long shot</td><td>Requires a PhD whose primary focus is AI with health applications.</td></tr>
+<tr><td>5</td><td><b>Bocconi University, Computing Sciences (Italy)</b><br><a href="https://jobmarket.unibocconi.eu/?id=1022" target="_blank" rel="noopener">Assistant Professor (call 1022)</a></td><td>Six-year tenure-track contract</td><td>Hard deadline 11 Jan 2027</td><td>2</td><td>Long shot</td><td>Recent hires are ML theory and vision.</td></tr>
+<tr><td>6</td><td><b>University of Sydney, Engineering (Australia)</b><br><a href="https://usyd.wd105.myworkdayjobs.com/en-GB/USYD_EXTERNAL_CAREER_SITE/job/Darlington-Campus/Multiple-Continuing--Tenure-Track--Academic-Positions---Faculty-of-Engineering--The-University-of-Sydney_0157992-1" target="_blank" rel="noopener">Continuing AI positions, Levels B to D</a></td><td>Continuing</td><td>Closes 1 Dec 2026</td><td>2</td><td>Not assessed</td><td>Light check only.</td></tr>
+<tr><td>7</td><td><b>EPFL, Computer and Communication Sciences (Switzerland)</b><br><a href="https://www.epfl.ch/about/working/faculty-positions-in-computer-communication-sciences/" target="_blank" rel="noopener">Open faculty search</a></td><td>Tenure-track assistant and above</td><td>Deadline 1 Nov passed, still accepting</td><td>2</td><td>Long shot</td><td>Light check only. Very selective.</td></tr>
+</table>
+<h2>Fellowships and teaching-track rows</h2>
+
+<table><tr><th>#</th><th>Search</th><th>Track</th><th>Date</th><th>Fit</th><th>Note</th></tr>
+<tr><td>1</td><td><b>NYU Center for Data Science</b><br><a href="https://apply.interfolio.com/193498" target="_blank" rel="noopener">CDS Faculty Fellow, fall 2027 (Interfolio 193498)</a></td><td>Two-year fellow, not tenure-track</td><td>Full consideration 24 Nov passed, still open</td><td>3</td><td>Names AI for science and responsible AI.</td></tr>
+<tr><td>2</td><td><b>NYU Courant, Computer Science</b><br><a href="https://apply.interfolio.com/194584" target="_blank" rel="noopener">Assistant Professor / Faculty Fellow (Interfolio 194584)</a></td><td>Two to three years, not tenure-track</td><td>Full consideration 1 Feb 2027</td><td>2</td><td>Carries an assistant professor title.</td></tr>
+<tr><td>3</td><td><b>UT Austin, Computer Science</b><br><a href="https://apply.interfolio.com/194461" target="_blank" rel="noopener">Instructional faculty, open rank (Interfolio 194461)</a></td><td>Teaching track</td><td>Next round 1 Feb 2027</td><td>2</td><td>A teaching-track fallback.</td></tr>
+<tr><td>4</td><td><b>Penn State, Informatics and Intelligent Systems</b><br><a href="https://psu.wd1.myworkdayjobs.com/PSU_Academic/job/Penn-State-University-Park/Teaching-Faculty-Positions-in-Artificial-Intelligence-and-Data-Sciences_REQ_0000084028-2" target="_blank" rel="noopener">Teaching faculty in AI and data sciences</a></td><td>Teaching track</td><td>Review begins 14 Dec 2026</td><td>2</td><td>A teaching-track fallback.</td></tr>
+</table>
+</section>
+
+<section class="page" id="calendar">
+<h1>Dates</h1>
+<p class="lead">Dates are as the employer posted them on 26 November 2026. "Review" means a review-start or priority date, and "hard" means the portal closes.</p>
+<table>
+<tr><th>Date</th><th>Search</th><th>Kind</th></tr>
+<tr><td>30 Nov</td><td>Ohio State, AI World Models</td><td>Hard (posting ends)</td></tr>
+<tr><td>1 Dec</td><td>UNC Chapel Hill Geography, GeoAI</td><td>Hard</td></tr>
+<tr><td>1 Dec</td><td>UC Irvine EECS, BU CDS AI for Science, CU Boulder ATOC, UT Austin CS, UC San Diego CSE, Texas A&amp;M CSE, Cornell Information Science, UNC CS (screening starts)</td><td>Review</td></tr>
+<tr><td>6 Dec</td><td>College of Staten Island</td><td>Hard</td></tr>
+<tr><td>7 Dec</td><td>Penn State ICDS co-hire, Utah (review starts after this date)</td><td>Review</td></tr>
+<tr><td>10 Dec</td><td>UMBC Trustworthy AI</td><td>Review (full consideration)</td></tr>
+<tr><td>11 Dec</td><td>Berkeley, AI and the Physical Sciences</td><td>Hard, with letters</td></tr>
+<tr><td>13 Dec</td><td>Alberta, Sustainable Transportation Futures</td><td>Hard</td></tr>
+<tr><td>14 Dec</td><td>UNC Charlotte, UCLA CS</td><td>Review</td></tr>
+<tr><td>15 Dec</td><td>Vanderbilt, UW-Madison CS, NYU CS</td><td>Review</td></tr>
+<tr><td>15 Dec</td><td>Toronto CS, Notre Dame</td><td>Hard</td></tr>
+<tr><td>20 Dec</td><td>Purdue Indianapolis</td><td>Review</td></tr>
+<tr><td>31 Dec</td><td>Maryland CS</td><td>Review</td></tr>
+<tr><td>1 Jan</td><td>Stony Brook Technology, AI and Society</td><td>Review</td></tr>
+<tr><td>4 Jan</td><td>Virginia Tech CEE (review), UNC CS (hard)</td><td>Mixed</td></tr>
+<tr><td>8 Jan</td><td>NYU AI for Science, Alberta AI for Health</td><td>Review</td></tr>
+<tr><td>11 Jan</td><td>Bocconi</td><td>Hard</td></tr>
+<tr><td>18 Jan</td><td>Aarhus</td><td>Hard</td></tr>
+<tr><td>20 Jan</td><td>Virginia Tech ECE</td><td>Review</td></tr>
+<tr><td>31 Jan</td><td>Michigan-Flint (materials due)</td><td>Hard for materials</td></tr>
+<tr><td>Already reviewing</td><td>North Florida, Stony Brook AI Innovation Institute, Purdue CS, Virginia Tech CS, UVA CS, Penn State AI, Chicago Data Science, Arizona State reserve pools, UMass Lowell</td><td>Rolling</td></tr>
+</table>
+<div class="callout amber"><b>References:</b> Searches that need full letters early are BU (both searches), Cornell, Berkeley, Toronto, UW-Madison CS, NYU and Chicago. UNC Geography asks for four names and Purdue Indianapolis asks for five, and you have three letter writers on record.</div>
+</section>
+
+<section class="page" id="out">
+<h1>Closed, gated and dropped</h1>
+<h2>Closed or removed since the sheet was updated</h2>
+<ul>
+<li><b>CU Boulder Computer Science (two AI positions):</b> the posting has been taken down.</li>
+<li><b>UNC Chapel Hill Data Science and Society:</b> the deadline was 16 November and the posting is gone.</li>
+<li><b>Also closed:</b> Northwestern Statistics and Data Science, UT Austin Statistics and Data Sciences, Toronto ECE (Canada Impact+), Notre Dame Mendoza, Berkeley's statistics and CS search, Berkeley computational biomedicine, UBC computational oncology, Edinburgh Informatics, Macquarie, and UT Austin's neuroscience search.</li>
+</ul>
+<h2>Open but gated</h2>
+<ul>
+<li><b>UT Arlington CSE:</b> the ad says visa sponsorship is "considered on an exception-only basis and is not routinely available".</li>
+<li><b>University of Houston CIS:</b> the minimum qualifications ask for a "strong record of external research funding", which you do not have as PI.</li>
+<li><b>Senior-only ranks:</b> Chicago associate professor of data science, the NYU Center for Data Science chair, Toronto's senior postings, and EPFL ethics of technology.</li>
+<li><b>BYU:</b> the ECE search is open to 1 December, but both BYU postings give preference to members of the sponsoring church and require a mission alignment statement.</li>
+</ul>
+<h2>Every other row (109 rows)</h2>
+<p>Each row below was read by two triage readers. Rows with any plausible path also had their posting opened in a light check.</p>
+<table><tr><th>Row</th><th>Institution and position</th><th>Why it is out</th></tr>
+<tr><td>R003</td><td><b>Arizona State University, W. P. Carey / Information Systems</b><br>Assistant Professor in Information Systems, tenure track</td><td>Light check of the posting: fit 1 of 4, portal open. This is a business-school information systems search that wants top-tier IS journal output and teaching in AI in business and business analytics. The ad names AI only in general terms and names none of his areas, and his record has no IS journal papers, so it is not promoted.</td></tr>
+<tr><td>R004</td><td><b>Arizona State University, W. P. Carey / Information Systems</b><br>Open-rank faculty in Information Systems, tenure track</td><td>Light check of the posting: fit 1 of 4, portal open. This is the open-rank twin of the same business-school IS search, with the same business or IS PhD requirement and premier IS journal bar. The ad names no area his publications sit in, so it is not promoted.</td></tr>
+<tr><td>R008</td><td><b>Brigham Young University</b><br>Full-time Computer Science faculty</td><td>Light check of the posting: fit 2 of 4, portal closed. The professorial search was open to all areas of computer science, which plausibly includes his work, but both searches closed on 4 October 2026. BYU also requires a mission alignment statement and gives preference to church members, so it is not promoted.</td></tr>
+<tr><td>R009</td><td><b>Brown University, School of Public Health</b><br>Assistant / Associate Professor, tenure track</td><td>Field triage, two readers: The search is for behavioral and social sciences in public health, which is unrelated to his field.</td></tr>
+<tr><td>R010</td><td><b>Clemson, Mathematical &amp; Statistical Sciences</b><br>Jeff &amp; Karen Camm Endowed Professor: Assistant, tenure track</td><td>Light check of the posting: fit 2 of 4, portal open. This is a broad data science and AI search tied to real-world problems, which fits his applied spatiotemporal ML work and his Esri internship. The required PhD is in statistics, data science, or operations research or a closely related field, so a CS PhD is a risk, and the school sits in mathematics and statistics.</td></tr>
+<tr><td>R011</td><td><b>Clemson University, Psychology</b><br>Assistant Professor in Human Factors Psychology, tenure track</td><td>Field triage, two readers: Human factors psychology is unrelated to his field.</td></tr>
+<tr><td>R012</td><td><b>College of Staten Island, CUNY, Business / IS &amp; Informatics</b><br>Assistant / Associate / Full Professor: Information Systems &amp; Informatics</td><td>Light check of the posting: fit 3 of 4, portal open. This is a business-school program, but the ad names trustworthy AI, machine learning, and data science and analytics, and it prefers a PhD in Computer Science. His trustworthy AI and anomaly detection work matches these named areas. The program leans toward teaching, and the assistant salary is about $94K to $114K.</td></tr>
+<tr><td>R013</td><td><b>Columbia University, SIPA</b><br>Assistant Professor: AI / Data Science &amp; Public Policy</td><td>Light check of the posting: fit 2 of 4, portal open. The ad wants deep AI, ML, and data science methods expertise and lists computer science as an eligible PhD field and climate and sustainable development as an applied domain, which matches his climate downscaling and spatiotemporal ML. His record shows no public policy research, and the search wants a policy bridge and a writing sample, so this is a weak but real path.</td></tr>
+<tr><td>R015</td><td><b>CU Boulder, ATLAS / Mechanical Engineering</b><br>Assistant Professor: Creative Technology &amp; Design</td><td>Field triage, two readers: Creative technology and design with HCI and soft robotics is a design field unrelated to his work.</td></tr>
+<tr><td>R016</td><td><b>CU Boulder, Computer Science</b><br>Two Assistant Professors in AI, tenure track</td><td>Verified: portal removed. The ad set 1 November 2026 as the full-consideration date and said it would accept applications until filled, but the posting has now been taken down from CU Boulder Jobs, so the candidate cannot apply through this requisition today.</td></tr>
+<tr><td>R017</td><td><b>CU Boulder, Institute of Cognitive Science</b><br>Assistant / early Associate Professor: AI &amp; the Mind</td><td>Light check of the posting: fit 1 of 4, portal unknown. The search is about AI and human cognition, with homes in CS, linguistics, psychology or education. His work is spatial and physics-informed ML with no cognitive-science thread, and the employer posting could not be opened.</td></tr>
+<tr><td>R018</td><td><b>Davidson College</b><br>Assistant Professor of Computer Science</td><td>Light check of the posting: fit 2 of 4, portal open. This is an open CS search at an undergraduate-only liberal arts college, and the PhD-by-fall-2027 rule fits him. The listed example areas are not his, the load is four to five courses a year with undergraduate research, and he has no instructor-of-record course, so his odds are modest.</td></tr>
+<tr><td>R019</td><td><b>Emory University, Oxford College</b><br>Two Assistant Professors in Psychology, tenure track</td><td>Field triage, two readers: Social and community psychology are unrelated to his field.</td></tr>
+<tr><td>R021</td><td><b>EPFL, Computer &amp; Communication Sciences</b><br>Faculty searches: Security &amp; Privacy; Mathematics of Learning; Ethics of Technology</td><td>Light check of the posting: fit 1 of 4, portal open. The Ethics search is senior rank only, so he is out of it. The Security and Privacy search expects core security research, and his GPS-spoofing and maritime work is anomaly detection more than security research. The Mathematics of Learning page was not checked.</td></tr>
+<tr><td>R022</td><td><b>Georgia Institute of Technology, Industrial &amp; Systems Engineering</b><br>Multiple faculty, all ranks: Human-Centered Systems interests</td><td>Light check of the posting: fit 1 of 4, portal open. This is an industrial and systems engineering search, and the ad names no area. His CS record (spatial ML, a third-author routing paper) only loosely touches ISyE&#x27;s operations research and statistics core. The Human-Centered Systems focus comes from a faculty post and does not appear in the ad.</td></tr>
+<tr><td>R023</td><td><b>Georgia Tech, Psychology</b><br>Two Assistant Professors in I–O Psychology, tenure track</td><td>Light check of the posting: fit 1 of 4, portal unknown. This is an industrial-organizational psychology search. The ad text could not be read, and nothing in his record touches workforce or people analytics, so it fails the psychology-search exclusion.</td></tr>
+<tr><td>R024</td><td><b>Harvard Business School, Negotiation, Organizations &amp; Markets</b><br>Assistant Professor</td><td>Field triage, two readers: Organizational behavior and psychology at a business school is unrelated to his field.</td></tr>
+<tr><td>R025</td><td><b>Harvey Mudd College</b><br>Jenna and Paul Segal Endowed Professorship of AI</td><td>Light check of the posting: fit 2 of 4, portal open. This is an open AI search that welcomes AI scholars connected to any discipline, so his AI for science and trustworthy spatiotemporal ML work plausibly fits. The ad stresses human-centered, ethical and societal dimensions and in-person undergraduate teaching at a liberal arts college, which his record does not foreground. No citizenship requirement is stated, and the preliminary packet is only a CV and a 3-4 page cover letter.</td></tr>
+<tr><td>R026</td><td><b>Haverford College</b><br>Assistant Professor of Computer Science, tenure track</td><td>Light check of the posting: fit 2 of 4, portal unknown. The title reads as a general computer science search at a liberal arts college, but I could not read the ad&#x27;s area text. The stated deadline passed almost two months ago, so there is no confirmed open path.</td></tr>
+<tr><td>R027</td><td><b>Imperial College London, Dyson Design Engineering</b><br>Assistant Professor in Fair &amp; Responsible AI</td><td>Light check of the posting: fit 2 of 4, portal removed. Fair and responsible AI is close to his trustworthy AI keywords, but his publications are on spatiotemporal anomaly detection and physics-informed models, not fairness. The advert is no longer live at its link, so there is no confirmed path.</td></tr>
+<tr><td>R028</td><td><b>Johns Hopkins, Health, Behavior &amp; Society</b><br>Assistant Professor, tenure track: AI &amp; Social/Behavioral Science</td><td>Light check of the posting: fit 1 of 4, portal closed. This is a public-health social and behavioral science search centered on social determinants of health and health inequities, which his record does not cover. The Interfolio portal has expired.</td></tr>
+<tr><td>R029</td><td><b>Lewis &amp; Clark College</b><br>Assistant Professor of Data Science, tenure track</td><td>Light check of the posting: fit 2 of 4, portal removed. A data science line in a new interdisciplinary program would plausibly include his spatial data science work. The requisition has been taken off the Workday board, so there is no confirmed open path.</td></tr>
+<tr><td>R030</td><td><b>Macquarie University, Computing</b><br>Lecturer in AI</td><td>Light check of the posting: fit 2 of 4, portal closed. This is a broad contemporary AI search that lists KDD, ICDM and ACM Transactions venues, which partly match his record. It closed in September and requires existing Australian work rights, which he does not hold.</td></tr>
+<tr><td>R033</td><td><b>Newcastle University, Computing</b><br>Lecturer / Senior Lecturer: AI &amp; Cyber Security</td><td>Light check of the posting: fit 1 of 4, portal removed. On 26 November 2026 Newcastle&#x27;s own job site lists 37 vacancies and none of them is a computing, AI or cyber security lectureship, so the ad appears closed or removed. The only fit link is his GPS-spoofing detection work, which is thin for a cyber security post.</td></tr>
+<tr><td>R034</td><td><b>Northeastern University</b><br>Open-rank faculty: AI Policy, Regulation &amp; Governance</td><td>Light check of the posting: fit 0 of 4, portal open. The Workday portal still accepts applications, but the tenure home is Political Science or Public Policy and Urban Affairs, and the ad asks for a policy or law scholar. The ad does not name any computational work he does.</td></tr>
+<tr><td>R035</td><td><b>Northwestern, Medical Social Sciences</b><br>Open-rank faculty, tenure track</td><td>Field triage, two readers: The search is for social and behavioral science of health, which is unrelated to his computing research.</td></tr>
+<tr><td>R036</td><td><b>Northwestern, School of Communication</b><br>Associate / Full Professor: AI, Entertainment &amp; Human Communication</td><td>Field triage, two readers: The role is senior-only and sits in communication studies on AI in entertainment, so it fails on both rank and field.</td></tr>
+<tr><td>R037</td><td><b>Northwestern, Statistics &amp; Data Science</b><br>Assistant Professor and tenured Associate/Full Professor</td><td>Light check of the posting: fit 2 of 4, portal closed. The assistant search named machine learning and emerging data science/AI, which plausibly covers his work. The department page now says both searches are closed, so he has no open path.</td></tr>
+<tr><td>R038</td><td><b>Northwestern Kellogg, Innovation Institute</b><br>Assistant / Associate Professor: Innovation Institute</td><td>Light check of the posting: fit 1 of 4, portal open. The form still loads, but this is a business-school search for scholars who study how AI changes innovation and organizations. His work builds AI methods for spatial data and does not study innovation or science of science. The full-consideration date passed in August.</td></tr>
+<tr><td>R039</td><td><b>Northwestern Kellogg, Management &amp; Organizations</b><br>Assistant Professor: Management &amp; Organizations</td><td>Field triage, two readers: Management and organizations is unrelated to his field even though computational science is mentioned.</td></tr>
+<tr><td>R040</td><td><b>Northwestern McCormick, Innovation Institute</b><br>Open-rank Engineering faculty</td><td>Light check of the posting: fit 1 of 4, portal unknown. I could not read the X post or find a McCormick ad for this Innovation Institute search, so I cannot score it from ad text. The related ESAM search does look like a real path. It is open, review begins on 1 December 2026, it hires at assistant level and above, and it names ML/AI for science. It should get its own row.</td></tr>
+<tr><td>R042</td><td><b>Notre Dame, Keough School of Global Affairs</b><br>Assistant Professor: Technology, Ethics &amp; Global Security</td><td>Light check of the posting: fit 1 of 4, portal closed. The search seeks an ethics scholar of emerging technology and security in a global affairs school. His maritime security and spoofing-detection work is technical, not ethics. The portal deadline of 9 October passed, according to triage.</td></tr>
+<tr><td>R043</td><td><b>Notre Dame, Psychology</b><br>Multiple tenure-track / tenured psychology faculty</td><td>Field triage, two readers: All three searches are in psychology, which is unrelated to his field.</td></tr>
+<tr><td>R044</td><td><b>Notre Dame Mendoza, IT, Analytics &amp; Operations</b><br>Open-rank faculty, tenure track</td><td>Light check of the posting: fit 2 of 4, portal closed. This is a business-school analytics search that asks for Data, AI and Computing research in business applications, with machine learning and network science named. His spatial and physics-informed ML work is only loosely related to business analytics. The Interfolio API (logic.interfolio.com/dossier-api/positions/193341) returns active_status Expired with end_date 15 November 2026, so the portal no longer accepts applications.</td></tr>
+<tr><td>R045</td><td><b>NYU Shanghai, Technology, Operations &amp; Statistics</b><br>Two tenure-track faculty positions</td><td>Light check of the posting: fit 1 of 4, portal removed. The Interfolio API returns an empty record for requisition 194860, and the page will not render, so the posting has been removed. The only remaining source is a LinkedIn post behind a login wall. A technology, operations and statistics group in a business school is outside his area unless the ad says otherwise, and no ad text could be read.</td></tr>
+<tr><td>R047</td><td><b>Old Dominion University, Psychology</b><br>Assistant Professor in Human Factors Psychology, tenure track</td><td>Field triage, two readers: Human factors psychology is unrelated to his field.</td></tr>
+<tr><td>R048</td><td><b>Palo Alto University, Psychology</b><br>Two Assistant Professors in Psychology, tenure track</td><td>Field triage, two readers: Both roles are psychology positions, which are unrelated to his field.</td></tr>
+<tr><td>R050</td><td><b>Penn State, University Park</b><br>Human-Centered AI tenure-line faculty</td><td>Covered through its individual searches or closed at verification.</td></tr>
+<tr><td>R051</td><td><b>Penn State IST, HCCSI</b><br>Assistant / Associate Professors: Applied AI Systems, tenure line</td><td>Verified: portal open. Review began on 1 November 2026 and continues until the positions are filled, so the posting has no hard deadline and he should apply as soon as possible.</td></tr>
+<tr><td>R052</td><td><b>Purdue, School of Engineering Technology</b><br>Assistant / Associate Professor: One Health</td><td>Light check of the posting: fit 1 of 4, portal open. The named areas are health devices and systems: medical manufacturing, healthcare robotics, wearables, biosensors, embedded systems, and digital twins for health. His only health work is a second-author oncology classification thread. That thread touches the AI-enabled diagnostics bullet only loosely and does not fit a hardware-focused engineering technology school.</td></tr>
+<tr><td>R054</td><td><b>Rice University, Psychological Sciences</b><br>Assistant Professor: Human-Centered AI in Health</td><td>Field triage, two readers: The position sits in psychological sciences and asks for psychology research, which is unrelated to his field.</td></tr>
+<tr><td>R055</td><td><b>Saarland University, SOUNDS</b><br>Recruitment initiative: five professorships</td><td>Light check of the posting: fit 2 of 4, portal unknown. SOUNDS is a computational social science observatory that uses novel data sources such as satellite imagery. That is near his geospatial data science work, but the focus is the study of societal change. The project page lists no individual professorship ad, so rank, eligibility and dates cannot be checked.</td></tr>
+<tr><td>R056</td><td><b>Saarland University, SOUNDS</b><br>W3 Professor in Computational Social Science</td><td>Field triage, two readers: A W3 professorship is a senior full-professor rank in Germany, and the computational social science field is also outside his work.</td></tr>
+<tr><td>R057</td><td><b>San José State University, School of Information</b><br>Assistant Professor: Ethical AI, Information Generation/Retrieval &amp; Knowledge Systems</td><td>Light check of the posting: fit 1 of 4, portal open. This is a library and information science iSchool search for information retrieval, LLM-based knowledge systems, AI governance and critical technology studies. His record has no information retrieval, data governance or LIS work, so the computational area named does not match what he publishes.</td></tr>
+<tr><td>R058</td><td><b>Santa Clara University, Leavey School of Business</b><br>Assistant Professor in Information Systems, tenure track</td><td>Light check of the posting: fit 1 of 4, portal open. This is a business-school information systems search that judges research by IS journals such as MISQ and ISR. The teaching list includes Database Management Systems and Big Data, which match his TA work, but his research does not fit the IS research tradition. The priority date has passed, and the interviews planned at CIST/INFORMS and ICIS also weaken his odds.</td></tr>
+<tr><td>R059</td><td><b>Stanford University, MS&amp;E</b><br>Assistant / untenured Associate Professor</td><td>Light check of the posting: fit 2 of 4, portal open. The search is a broad junior MS&amp;E search that names analytics and computation, so his mobility, routing and spatiotemporal data work plausibly fits. MS&amp;E usually hires in operations research, economics and policy, so the odds are low, and the full-consideration date has passed. The ad states no citizenship requirement.</td></tr>
+<tr><td>R060</td><td><b>Stockholm School of Economics, House of Innovation</b><br>Assistant Professor, tenure track</td><td>Light check of the posting: fit 1 of 4, portal closed. This is a business-school information systems and innovation management search that expects management journal publications. His computational AI work does not match that field, and the portal is closed.</td></tr>
+<tr><td>R062</td><td><b>Stony Brook, Technology, AI &amp; Society</b><br>Assistant / Associate Professors and postdocs</td><td>Light check of the posting: fit 3 of 4, portal open. The ad names AI, Sustainability and Environment and AI, Health and Medicine, and his sea-level downscaling, agroecosystem surrogate and Mayo oncology work sit in those areas. The ad also requires a strong research agenda on AI and Society, so his statement must frame the societal side. A CS PhD is listed as a relevant field, and no citizenship requirement appears.</td></tr>
+<tr><td>R064</td><td><b>Texas A&amp;M, Electrical &amp; Computer Engineering</b><br>Six full-time tenured / tenure-track faculty</td><td>Light check of the posting: fit 2 of 4, portal open. The ad emphasizes AI/ML across all ECE areas and accepts a doctorate in a closely related engineering or science discipline, so a CS PhD in physics-informed ML qualifies. The search does not name spatiotemporal or geospatial work, and the full-consideration date has passed. No citizenship requirement appears in the ad text.</td></tr>
+<tr><td>R065</td><td><b>Texas A&amp;M, Psychological &amp; Brain Sciences</b><br>Three open-rank faculty: Quantitative &amp; Computational Methods</td><td>Light check of the posting: fit 1 of 4, portal open. The search wants methods that advance psychological science and requires a psychology PhD or a closely related field. He has no psychology or behavioral research, so his ML work does not fit this department.</td></tr>
+<tr><td>R066</td><td><b>Tufts University, Psychology</b><br>Assistant Professor in Behavioral Neuroscience, tenure track</td><td>Field triage, two readers: Behavioral neuroscience in a psychology department is unrelated to his field.</td></tr>
+<tr><td>R068</td><td><b>UC Berkeley, School of Information</b><br>Assistant Professor in Human–Computer Interaction</td><td>Field triage, two readers: This is a human-computer interaction search in an information school, which is pure HCI and unrelated to his work.</td></tr>
+<tr><td>R069</td><td><b>UC Irvine, Cognitive Sciences</b><br>Assistant Professor in Cognitive Sciences</td><td>Field triage, two readers: Cognitive sciences is unrelated to his field.</td></tr>
+<tr><td>R071</td><td><b>UC Irvine, Informatics</b><br>Open-rank faculty in Human–Computer Interaction</td><td>Field triage, two readers: This is a human-computer interaction search in Informatics, which is unrelated to his work.</td></tr>
+<tr><td>R072</td><td><b>UC Irvine, Psychology</b><br>Assistant Professor: Quantitative, Computational &amp; Data Science</td><td>Light check of the posting: fit 1 of 4, portal open. The ad requires a fit with developmental, health, social or clinical psychology and a psychology or closely related doctorate. His record has no psychology work, so he has no real path here.</td></tr>
+<tr><td>R073</td><td><b>UC Irvine, Psychology</b><br>Three psychology faculty searches</td><td>Light check of the posting: fit 1 of 4, portal open. The quantitative search names machine learning and data science, but only as methods for psychological questions, and it requires a psychology-area fit and a psychology or closely related doctorate. The health search does not fit him, and the behavior change search is associate rank only.</td></tr>
+<tr><td>R074</td><td><b>UC San Diego, Cognitive Science</b><br>Assistant Professor in Cognitive Science</td><td>Field triage, two readers: Cognitive science research on biological and artificial minds is outside his field.</td></tr>
+<tr><td>R076</td><td><b>UC San Francisco, Social &amp; Behavioral Sciences</b><br>Open-rank faculty in Sociology, tenure track</td><td>Field triage, two readers: The search is in sociology of health and illness, which is unrelated to his computing record.</td></tr>
+<tr><td>R077</td><td><b>UC Santa Barbara, Communication</b><br>Open-rank faculty, tenured / tenure track</td><td>Field triage, two readers: The search sits in a communication department and studies social consequences of AI in organizations, which is outside his field.</td></tr>
+<tr><td>R081</td><td><b>UNC Chapel Hill, Data &amp; Information Sciences</b><br>Assistant / Associate Professor: Automated Methods in Cultural Heritage</td><td>Light check of the posting: fit 1 of 4, portal open. The ad requires a record of automated methods applied in libraries, archives, museums, or similar institutions, and his work does not touch cultural heritage.</td></tr>
+<tr><td>R082</td><td><b>UNC Chapel Hill, Data Science &amp; Society</b><br>Multiple open-rank faculty, tenure track</td><td>Verified: portal removed. The posting&#x27;s application deadline was 16 November 2026 and it was not open until filled, so this search has closed and cannot be applied to today.</td></tr>
+<tr><td>R084</td><td><b>UNC Greensboro</b><br>Assistant Professor: Information, Library &amp; Research Sciences</td><td>Field triage, two readers: The search is in library and information science with a collection development focus, which is unrelated to his field.</td></tr>
+<tr><td>R085</td><td><b>University at Buffalo, Information Science</b><br>Assistant Professor in Information Science, tenure track</td><td>Light check of the posting: fit 1 of 4, portal open. The search is open to any area, but it sits in a library and information science department and names socio-technical policy, HCI, information practices and cultural heritage, none of which he works in. The ad also says UB does not guarantee visa sponsorship.</td></tr>
+<tr><td>R086</td><td><b>University College London, Interaction Centre</b><br>Lecturer in Human-Centred AI</td><td>Field triage, two readers: The UCL Interaction Centre role is human-centred AI within HCI, which falls in the pure HCI category on the scale.</td></tr>
+<tr><td>R087</td><td><b>University College London, School of Management</b><br>Open-rank faculty: Operations &amp; Technology, tenure track</td><td>Light check of the posting: fit 1 of 4, portal unknown. Operations and technology is a management-school field. Without the ad text I found no named area that matches his record, and his routing work is only a third-author contribution.</td></tr>
+<tr><td>R088</td><td><b>University of Alabama, Culverhouse / MIS</b><br>Assistant Professor in MIS, tenure track</td><td>Light check of the posting: fit 1 of 4, portal open. The ad wants generative AI research in MIS on organizational and governance topics, a doctorate in MIS or a close field, and lead-author papers in the Culverhouse list of MIS journals, and he has none of these.</td></tr>
+<tr><td>R090</td><td><b>University of Alberta, Computing Science</b><br>Tenure-track faculty: Computer Systems for AI &amp; High-Performance Computing</td><td>Light check of the posting: fit 1 of 4, portal open. The ad requires a PhD whose primary focus is in systems such as architecture, compilers, operating systems or distributed computing, and his work is spatial data mining and ML. Canadians and permanent residents get priority, but citizenship is not required.</td></tr>
+<tr><td>R091</td><td><b>University of Arizona, Educational Psychology / Information Science</b><br>Assistant Professor: Human-Centered AI &amp; Data Literacy, tenure track</td><td>Field triage, two readers: The role is majority educational psychology and studies AI and data literacy in learning, which is outside his field.</td></tr>
+<tr><td>R092</td><td><b>University of Baltimore</b><br>Assistant Professor: Organizational Behavior &amp; HR Management</td><td>Field triage, two readers: Organizational behavior and human resource management is a management field unrelated to his record.</td></tr>
+<tr><td>R093</td><td><b>University of Bern, Information Systems</b><br>Assistant Professor in Information Systems, tenure track</td><td>Light check of the posting: fit 1 of 4, portal open. This is a business-school information-systems search about designing and integrating AI in organizations, human-centered AI and work systems, and AI decision support. The candidate&#x27;s record is spatiotemporal and physics-informed ML, and he does not do organizational IS research. The ad also requires teaching in German, which nothing on the profile card supports. It is not promoted.</td></tr>
+<tr><td>R094</td><td><b>University of British Columbia</b><br>Canada Impact+ Emerging Leaders: nine researchers</td><td>Light check of the posting: fit 1 of 4, portal open. The only computing role still open is protein modeling and design in the Faculty of Medicine, and the other open role is advanced manufacturing. Neither is an area he publishes in. The Environment and climate role (Chemistry of Wildfires) closed on 5 November and is a chemistry position. He is working and living outside Canada, so he would meet the international rule, but no open role fits.</td></tr>
+<tr><td>R097</td><td><b>University of Chicago, Data Science</b><br>Associate Professor of Data Science, tenured</td><td>Light check of the posting: fit 3 of 4, portal open. The topics named in the ad include safe and trustworthy AI and scientific AI, and both match his threads. The rank is tenured associate only, so a new PhD with no grant as PI is not a realistic applicant. It is not promoted. The Data Science Institute may run a separate assistant-rank search, but I did not check one in this task.</td></tr>
+<tr><td>R098</td><td><b>University of Copenhagen, Computer Science</b><br>Assistant Professor in Human-Centred Computing</td><td>Field triage, two readers: Human-centred computing covering HCI, VR and design perspectives falls in the pure HCI category.</td></tr>
+<tr><td>R099</td><td><b>University of Edinburgh, Business School</b><br>Early Career Fellow / Lecturer: Digital Innovation &amp; AI</td><td>Light check of the posting: fit 1 of 4, portal closed. This was a business-school innovation and IS role, and it closed on 1 October 2026. The Oracle HCM API returns no record for requisition 14677, and searching the active Edinburgh listings for &#x27;Digital Innovation&#x27; returns nothing.</td></tr>
+<tr><td>R100</td><td><b>University of Edinburgh, Informatics</b><br>Lecturer roles: AI and Robotics</td><td>Light check of the posting: fit 2 of 4, portal removed. The announcement asks for AI methods for perception and action, generative models and decision-making under uncertainty, with environment named as one application domain. That is a broad AI fit for his generative-model work, but the search is centered on robotics. The Oracle HCM API returns zero items for both 14760 and 14761. Searches of the active Edinburgh listings for &#x27;Informatics&#x27;, &#x27;Robotics&#x27; and &#x27;Artificial Intelligence&#x27; turn up only technician, research engineer and research associate posts, so the searches look closed or removed. It is not promoted.</td></tr>
+<tr><td>R101</td><td><b>University of Florida, Advertising</b><br>Assistant Professor in AI &amp; Advertising, tenure track</td><td>Field triage, two readers: The search is in advertising and strategic communication, which is unrelated to his spatial data science and physics-informed ML record.</td></tr>
+<tr><td>R102</td><td><b>University of Georgia, Terry / MIS</b><br>Three Information Systems faculty searches</td><td>Light check of the posting: fit 1 of 4, portal removed. These are business-school MIS searches, and the announcement names no computational area he works in. Both requisition links (495037 and 496486) redirect to the general postings page, and a board search for &#x27;Management Information Systems&#x27; lists no faculty posting. The searches appear withdrawn or closed.</td></tr>
+<tr><td>R103</td><td><b>University of Gothenburg</b><br>Global Scholars Initiative: 25 positions</td><td>Light check of the posting: fit 1 of 4, portal closed. The call is university-wide across disciplines, and the page names no computing or spatial data area, so fit depends on individual ads that have now closed. The page also says the posts are not tenure-track in the US sense. It is closed, so it is not promoted.</td></tr>
+<tr><td>R104</td><td><b>University of Helsinki</b><br>University Lecturer in Digital Humanities</td><td>Field triage, two readers: Digital humanities is a humanities-centered field that his record does not touch.</td></tr>
+<tr><td>R105</td><td><b>University of Hong Kong, Education</b><br>Assistant Professor in AI &amp; Social Contexts of Education</td><td>Field triage, two readers: The role studies the social contexts and policy of AI in education, which is unrelated to his research.</td></tr>
+<tr><td>R106</td><td><b>University of Houston, Computer Science</b><br>Assistant Professor: Human-Centered Robotics &amp; Assistive Systems</td><td>Light check of the posting: fit 1 of 4, portal open. The search names human-robot interaction, wearable and rehabilitation robotics, assistive robotics, brain-computer interfaces and embodied AI. The candidate has no publications in robotics or HRI, so this is computing outside his area. The portal is open and there is no citizenship requirement, but fit is too low to promote.</td></tr>
+<tr><td>R107</td><td><b>University of Houston, Information Science Technology</b><br>Three tenure-track faculty: CIS &amp; Digital Media</td><td>Covered through its individual searches or closed at verification.</td></tr>
+<tr><td>R108</td><td><b>University of Maryland, AIM / School of Public Policy</b><br>Assistant Professor: AI &amp; Public Policy</td><td>Light check of the posting: fit 1 of 4, portal open. The ad accepts a computer science PhD and wants deep AI expertise, but it requires a research agenda on the public policy dimensions of AI. The candidate&#x27;s record is technical spatial AI with no policy research. The ad mentions critical infrastructure resilience and sustainability as policy topics, but it does not name computational work he does as the research core. Under the policy-search rule this is not promoted.</td></tr>
+<tr><td>R110</td><td><b>University of Maryland, Philosophy / AIM</b><br>Philosophy of Mind; AI Ethics / AI Safety faculty</td><td>Field triage, two readers: Both searches are philosophy of mind and AI ethics in philosophy, which is outside his field.</td></tr>
+<tr><td>R112</td><td><b>University of Michigan, School of Information</b><br>Presidential Postdoctoral Fellow / Assistant Professor: Privacy &amp; Technology</td><td>Light check of the posting: fit 1 of 4, portal closed. The search is about privacy and technology, which is not one of the candidate&#x27;s research threads. Both required deadlines have passed, so it is closed and is not promoted.</td></tr>
+<tr><td>R115</td><td><b>University of Minnesota, Psychology / CAB</b><br>Assistant Professor, tenure track</td><td>Field triage, two readers: Computational perception and cognition in a psychology department is outside his field.</td></tr>
+<tr><td>R117</td><td><b>University of Ottawa</b><br>Assistant Professor: Democracy &amp; Technology</td><td>Field triage, two readers: Democracy and technology is a social science and policy area unrelated to his research.</td></tr>
+<tr><td>R118</td><td><b>University of Ottawa</b><br>Assistant Professor in AI Ethics, tenure track</td><td>Field triage, two readers: AI ethics as research and teaching is a philosophy and ethics field outside his record.</td></tr>
+<tr><td>R119</td><td><b>University of Rhode Island, Psychology</b><br>Digital Health cluster: Full Professor + two Assistant Professors</td><td>Field triage, two readers: The digital health cluster sits in psychology, and the full professor line is senior-only, so neither fits his field.</td></tr>
+<tr><td>R120</td><td><b>University of San Diego, Arts &amp; Sciences</b><br>Faculty openings: Arts &amp; Sciences</td><td>Light check of the posting: fit 0 of 4, portal open. The current open positions are in art and graphic design, biology, chemistry, English, history, political science, psychological sciences and theatre. No computer science, data science or mathematics search appears, so the candidate has no path here.</td></tr>
+<tr><td>R121</td><td><b>University of South Carolina Upstate, Business &amp; Economics</b><br>Assistant / Associate Professor of Business Analytics</td><td>Light check of the posting: fit 1 of 4, portal open. This is a teaching-focused business-school search for MBA and Master of Business Analytics courses. It asks for a PhD or DBA in business analytics, statistics, economics or a related field, and it names no research area the candidate works in. Under the business-school rule it is not promoted.</td></tr>
+<tr><td>R122</td><td><b>University of St. Gallen, School of Management</b><br>Associate Professor / Assistant Professor, tenure track: Technology &amp; Innovation Management</td><td>Field triage, two readers: Technology and innovation management is a management field unrelated to his research.</td></tr>
+<tr><td>R124</td><td><b>University of Texas at Arlington, Computer Science &amp; Engineering</b><br>Assistant / Associate / Full Professor, tenured / tenure track</td><td>Verified: portal open. The posting has no hard deadline and is open until filled, but review began on 13 November 2026, so he should apply as soon as possible.</td></tr>
+<tr><td>R126</td><td><b>University of Texas at Austin, Information</b><br>Open-rank faculty, tenured / tenure track</td><td>Light check of the posting: fit 2 of 4, portal open. The search is open-area and invites computer science and data science applicants, and the School of Computing allows joint appointments with CS and SDS. The example areas lean human-centered (HCI, archives, information behavior), so his spatial data science work fits only as a broad case. The ad asks for I-9 work-eligibility verification, which is standard and is not a citizenship requirement.</td></tr>
+<tr><td>R127</td><td><b>University of Texas at Austin, Statistics &amp; Data Sciences</b><br>Multiple faculty, all ranks</td><td>Light check of the posting: fit 3 of 4, portal closed. The ad names scientific machine learning and AI for science, which match his physics-informed and knowledge-guided ML threads. The Interfolio portal expired on 16 November, so he has no application path today. A direct inquiry to the search co-chairs named in the ad is the only option left.</td></tr>
+<tr><td>R129</td><td><b>University of Toronto, ECE</b><br>Assistant Professor: Canada Impact+ Emerging Leaders</td><td>Light check of the posting: fit 3 of 4, portal removed. The ad named AI for Science, sustainability and climate resilience, which match his work. He would also meet the rule that candidates must be based outside Canada. The deadline has passed and the posting has been taken down, so he has no path.</td></tr>
+<tr><td>R133</td><td><b>University of Virginia, Psychology</b><br>Assistant Professor in Developmental Psychology, tenure track</td><td>Field triage, two readers: Developmental psychology is unrelated to his field.</td></tr>
+<tr><td>R134</td><td><b>University of Washington, Bioethics &amp; Humanities</b><br>Assistant Professor, tenure track</td><td>Field triage, two readers: Bioethics and humanistic study of AI is unrelated to his technical research.</td></tr>
+<tr><td>R135</td><td><b>University of Washington, HCDE</b><br>Assistant Professor, tenure track</td><td>Light check of the posting: fit 1 of 4, portal open. The search is about sociotechnical and human-centered design. The ad does mention mobility and environmental sensing, but it frames them as community and design questions. His work is computational spatial data mining and physics-informed ML, and he has no HCI or design record, so the fit is only partial.</td></tr>
+<tr><td>R136</td><td><b>University of Washington, Information School</b><br>Assistant Professor / Assistant Teaching Professor: IS &amp; Information Management</td><td>Light check of the posting: fit 1 of 4, portal open. The tenure-track ad is an organizational information-systems search on AI adoption, governance and the future of work, which is not his area. The teaching-track ad asks for teaching in databases, data visualization and enterprise data management. He has database TA experience there, but it is a teaching role and does not offer a research path.</td></tr>
+<tr><td>R138</td><td><b>University of Washington, Information School</b><br>Assistant Professor in Library &amp; Information Science, tenure track</td><td>Field triage, two readers: Library and information science is unrelated to his field.</td></tr>
+<tr><td>R139</td><td><b>University of Zurich, IKMZ</b><br>Senior Research &amp; Teaching Associate: AI / ML / Digital Transformation</td><td>Light check of the posting: fit 1 of 4, portal closed. The deadline passed on 15 August 2026, and the row notes that the employer ad was withdrawn. The role sits in a communication and media research department. It is a fixed-term postdoctoral post without a faculty title or a named independent fellowship, so it is not promoted.</td></tr>
+<tr><td>R141</td><td><b>UW–Madison, Educational Psychology</b><br>Open-rank Professor of Learning Sciences: RISE-AI</td><td>Field triage, two readers: The learning sciences role in educational psychology is unrelated to his field.</td></tr>
+<tr><td>R144</td><td><b>Vanderbilt University, Peabody / Connected Computing</b><br>Two open-rank faculty: Generative AI &amp; Psychometrics, tenured / tenure track</td><td>Light check of the posting: fit 1 of 4, portal open. The search wants psychometric methods for LLMs, such as item generation, response scoring, construct validity and benchmark evaluation, with a tenure home in Peabody&#x27;s quantitative methods program. The candidate has no psychometrics or measurement publications, and the ad names none of his areas. The ad states no citizenship requirement, but the fit is too weak to promote.</td></tr>
+<tr><td>R145</td><td><b>Vassar College</b><br>Assistant Professor of Psychological Science, tenure track</td><td>Field triage, two readers: Psychological science is unrelated to his field.</td></tr>
+<tr><td>R147</td><td><b>Virginia Tech, Psychology</b><br>Open-rank faculty in Industrial–Organizational Psychology, tenure track</td><td>Field triage, two readers: Industrial-organizational psychology is unrelated to his field.</td></tr>
+<tr><td>R148</td><td><b>Virginia Tech, Technical &amp; Scientific Communication</b><br>Assistant / Associate Professor</td><td>Field triage, two readers: Technical and scientific communication about health care technology is unrelated to his field.</td></tr>
+<tr><td>R149</td><td><b>Washington University in St. Louis, Arts &amp; Sciences</b><br>Rules of Life + AI: multiple open-rank faculty</td><td>Covered through its individual searches or closed at verification.</td></tr>
+<tr><td>R151</td><td><b>Yale University, Computer Science</b><br>HCI Assistant Professor; open-rank Quantum Computing faculty</td><td>Field triage, two readers: The row names two searches, one in HCI and human-AI interaction and one in quantum computing theory and algorithms, and neither area appears in the candidate&#x27;s spatial data science, anomaly detection or physics-informed ML record.</td></tr>
+</table>
+</section>
+
+<section class="page" id="method">
+<h1>Method and open items</h1>
+<h2>What was done</h2>
+<ul>
+<li><b>Triage:</b> two independent readers judged all 151 rows on field and rank only, and a row survived if either reader kept it. 109 rows survived.</li>
+<li><b>Bundles:</b> 16 bundle rows were opened and split into 59 individual searches.</li>
+<li><b>Verification:</b> 48 searches from the sheet and 12 found searches each had the employer's posting read for rank, dates, PhD wording, sponsorship and letters, with a quote for each fact. A second agent mapped the chair, committee, area faculty and recent hires of each unit.</li>
+<li><b>Roster:</b> six agents built a list of 256 people tied to Prof. Shekhar, Prof. Kumar or you, from Prof. Shekhar's CV, Prof. Kumar's alumni page, dissertation records, OpenAlex and NSF award records. The 165 academics had their current post confirmed.</li>
+<li><b>Adversarial checks:</b> every portal was reopened by a different agent, 11 tie claims were challenged, and 23 files were read by a skeptical search chair. Three ties were downgraded and two searches were found closed.</li>
+<li><b>My own checks:</b> I re-read the postings for UNC Geography, UMBC, Ohio State and UT Austin, and the NSF record for award 2118285.</li>
+</ul>
+<h2>What is still unverified</h2>
+<ul>
+<li><b>Sponsorship:</b> almost every ad is silent, so no row confirms H-1B sponsorship. Ohio State and UT Arlington state limits.</li>
+<li><b>Committees:</b> only the people listed on page 4 are named in a search role. Area faculty are not committee members.</li>
+<li><b>Degree field:</b> UNC Geography, NYU AI for Science, WashU and UW-Madison iSchool name fields other than Computer Science, and each committee decides whether your degree counts.</li>
+<li><b>Portals:</b> no agent signed in to any portal, so the application forms themselves were not seen. The CU Boulder page did not open from my shell.</li>
+<li><b>Recent-hire venues:</b> several venue profiles were inferred from a hire's stated area and not read from a publication page.</li>
+<li><b>Your record:</b> one skeptical chair noted that your profile lists GPS-spoofing detection as a thread but no paper with spoofing in its title. A committee in security will ask about it.</li>
+
+</ul>
+
+</section>
+
+  </main>
+</div>
+
+<div class="pop" id="pop"></div>
+
+<script>
+(function(){
+  "use strict";
+  var pages = ["bottom", "week", "cycle", "network", "longshots", "tracks", "calendar", "out", "method"];
+  var main = document.getElementById("main");
+
+  function safeGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+  function safeSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+  function safeHash(id){ try{ history.replaceState(null,"","#"+id); }catch(e){ try{ location.hash=id; }catch(_){} } }
+
+  function show(id){
+    if(pages.indexOf(id)<0) id = pages[0];
+    document.querySelectorAll(".page").forEach(function(p){ p.classList.toggle("active", p.id===id); });
+    document.querySelectorAll("#nav a").forEach(function(a){ a.classList.toggle("active", a.getAttribute("data-p")===id); });
+    safeHash(id); safeSet("facsearch2627_page", id);
+    if(main) main.scrollTop = 0; window.scrollTo(0,0);
+    var side = document.getElementById("side"); if(side) side.classList.remove("open");
+  }
+
+  document.addEventListener("click", function(e){
+    var t = e.target.closest("[data-p]");
+    if(t){ e.preventDefault(); show(t.getAttribute("data-p")); }
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    var cur = pages.indexOf((safeGet("facsearch2627_page")||"bottom"));
+    if(cur<0) cur=0;
+    if(e.key==="ArrowDown"||e.key==="j"||e.key==="ArrowRight"){ e.preventDefault(); show(pages[Math.min(pages.length-1,cur+1)]); }
+    else if(e.key==="ArrowUp"||e.key==="k"||e.key==="ArrowLeft"){ e.preventDefault(); show(pages[Math.max(0,cur-1)]); }
+  });
+
+  var stored = safeGet("facsearch2627_theme");
+  if(stored){ document.documentElement.setAttribute("data-theme", stored); }
+  var themeBtn = document.getElementById("themeBtn");
+  if(themeBtn) themeBtn.addEventListener("click", function(){
+    var cur = document.documentElement.getAttribute("data-theme");
+    var prefersDark = false; try{ prefersDark = matchMedia("(prefers-color-scheme:dark)").matches; }catch(e){}
+    var next = cur==="dark" ? "light" : (cur==="light" ? "dark" : (prefersDark?"light":"dark"));
+    document.documentElement.setAttribute("data-theme", next); safeSet("facsearch2627_theme", next);
+  });
+
+  var printBtn = document.getElementById("printBtn");
+  if(printBtn) printBtn.addEventListener("click", function(){
+    document.querySelectorAll(".page").forEach(function(p){ p.classList.add("active"); });
+    window.print();
+    setTimeout(function(){ show(safeGet("facsearch2627_page")||"bottom"); }, 300);
+  });
+
+  var menuBtn = document.getElementById("menuBtn");
+  if(menuBtn) menuBtn.addEventListener("click", function(){
+    var side = document.getElementById("side"); if(side) side.classList.toggle("open");
+  });
+
+  var pop = document.getElementById("pop");
+  function hidePop(){ if(pop) pop.style.display="none"; }
+  document.addEventListener("click", function(e){
+    var term = e.target.closest(".term");
+    if(term && pop){
+      e.stopPropagation();
+      pop.innerHTML = "<b>Definition.</b> " + (term.getAttribute("data-def")||"");
+      pop.style.display = "block";
+      var r = term.getBoundingClientRect();
+      var top = r.bottom + 8, left = Math.min(r.left, window.innerWidth - 356);
+      if(top + pop.offsetHeight > window.innerHeight) top = r.top - pop.offsetHeight - 8;
+      pop.style.top = Math.max(8, top) + "px";
+      pop.style.left = Math.max(8, left) + "px";
+    } else if(!e.target.closest("#pop")){ hidePop(); }
+  });
+  window.addEventListener("scroll", hidePop, true);
+  window.addEventListener("resize", hidePop);
+
+  var initial = "";
+  try{ initial = (location.hash||"").replace("#",""); }catch(e){}
+  if(!initial) initial = safeGet("facsearch2627_page") || "bottom";
+  show(initial);
+})();
+</script>
+</body>
+</html>
